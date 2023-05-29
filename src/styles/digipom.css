@@ -4,6 +4,13 @@
 
 @font-face {
     font-family: 'Poppins';
+    src: url('/fonts/Poppins-Thin.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
     src: url('/fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
@@ -31,11 +38,13 @@
     font-display: swap;
 }
 
+/* Smoothes out the hover effects on a tags or anything with "transition" class */
 a, .transition {
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
 }
 
+/* Styling for the mobile navbar hamburger lines */
 .bar {
     display: block;
     width: 25px;
@@ -43,23 +52,21 @@ a, .transition {
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #101010;
+    background-color: #0E0E2C;
 }
 
+/* Media query to animate the bars */
 @media only screen and (max-width: 768px) {
     .hamburger {
         display: block;
         cursor: pointer;
     }
-
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
-
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
