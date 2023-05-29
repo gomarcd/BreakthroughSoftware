@@ -1,5 +1,5 @@
 <!-- Digipom header -->
-<header class="px-2 py-3 max-w-1 lg:mb-10 lg:max-w-5xl lg:ml-auto lg:mr-auto md:flex md:items-center md:justify-between">
+<header class="px-2 py-3 max-w-1 lg:mb-10 lg:max-w-5xl lg:ml-auto lg:mr-auto flex items-center justify-between">
     <a href="/" class="flex items-center">
         <img src="/images/Dog-logo-final.png" class="w-12 h-12 mr-3">
         <div class="font-semibold text-dpgreen text-logo">Digipom</div>
@@ -10,4 +10,19 @@
         <a class="font-medium text-dpdarkblue text-opacity-60 hover:text-dpgreen/100" href="/about">Who are we?</a>
         <a class="font-medium text-dpdarkblue text-opacity-60 hover:text-dpgreen/100" href="/">Contact us</a>
     </div>
+    <div class="visible md:hidden">
+        <div class="text-dpdarkblue" onclick="navMenu()">
+            <svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.1278 2.1604L30.977 0.00976562L16.8442 14.1426L2.71137 0.00976562L0.560547 2.1604L14.6935 16.2933L0.560547 30.4262L2.71137 32.5769L16.8442 18.444L30.977 32.5769L33.1278 30.4262L18.9949 16.2933L33.1278 2.1604Z" fill="currentColor"/>
+            </svg>
+        </div>
+    </div>
 </header>
+
+<div id="navLinks" class="mt-5 flex h-full w-full flex-col items-center" style="display: none;">
+    <a class="py-4 font-medium text-5xl text-dpdarkblue text-opacity-60 hover:text-dpgreen/100" href="/">Home</a>
+    <a class="py-4 font-medium text-5xl text-dpdarkblue text-opacity-60 hover:text-dpgreen/100" href="/">Our Apps</a>
+    <a class="py-4 font-medium text-5xl text-dpdarkblue text-opacity-60 hover:text-dpgreen/100" href="/about">Who are we?</a>
+    <a class="py-4 font-medium text-5xl text-dpdarkblue text-opacity-60 hover:text-dpgreen/100" href="/">Contact us</a>
+</div>
+
