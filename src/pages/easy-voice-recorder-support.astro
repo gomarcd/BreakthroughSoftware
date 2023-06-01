@@ -6,10 +6,10 @@ import '../styles/digipom.css';
 <Layout title="Easy Voice Recorder Support - Digipom">
 	<section class="px-4 mb-8 lg:px-0 lg:max-w-[1110px] lg:mx-auto">
         <h2 class="font-bold text-reallybig mb-3">Easy voice recorder support resources</h2>
-        <h2 class="font-bold text-bigapp mb-6">General support information</h2>
+        <h2 class="font-bold text-xl md:text-bigapp mb-6">General support information</h2>
     </section>
 
-    <section class="px-2 mb-20 lg:px-0 lg:max-w-[1110px] lg:mx-auto">
+    <section class="px-4 mb-8 mb:mb-20 lg:px-0 lg:max-w-[1110px] lg:mx-auto">
         <div class="max-w-[1044px] text-dpdarkblue text-opacity-60 text-sm leading-6">
             <p class="mb-4">Many problems can be fixed by restarting your device. If you’re having problems, please try this first. Some problems can also be fixed by uninstalling and reinstalling the application. Please note that Easy Voice Recorder cannot record phone calls on most phones. On some devices, Bluetooth is supported only for phone calls, and not for application audio.</p>
             <p class="mb-4">
@@ -19,14 +19,14 @@ import '../styles/digipom.css';
         </div>
     </section>
 
-    <section class="px-4 mb-14 lg:px-0 lg:max-w-[1110px] lg:mx-auto flex items-start justify-between">
-        <div class="w-1/2">
-            <div class="mb-2 font-bold text-dpgreen md:text-app">FAQ</div>
-            <div class="mb-8 font-bold text-dpdarkblue text-bigapp">Here are some answers for  frequently asked questions</div>
+    <section class="px-4 mb-14 lg:px-0 lg:max-w-[1110px] lg:mx-auto md:flex md:items-start md:justify-between">
+        <div class="mb-6 md:mb-0 md:w-1/2">
+            <div class="mb-2 font-bold text-dpgreen text-app">FAQ</div>
+            <div class="mb-8 font-bold text-dpdarkblue text-bigapp">Here are some answers for frequently asked questions</div>
             <div class="w-[480px] text-dpdarkblue text-opacity-60 text-app leading-6">Get answers to the most common questions we receive from our users.</div>
         </div>
-        <div class="w-1/2">
-            <div class="mb-8 px-8 py-4 border-2 border-dpgreen rounded text-dpdarkblue text-lg">
+        <div class="md:w-1/2">
+            <div id="how-do-i-back-up-my-recordings" class="mb-8 px-8 py-4 border-2 border-dpgreen rounded text-dpdarkblue md:text-lg">
                 <div class="question flex items-center justify-between cursor-pointer">
                     How do I back up my recordings?
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,10 +37,28 @@ import '../styles/digipom.css';
                     </svg>
                 </div>
                 <div class="answer hidden mt-4 text-dpdarkblue text-opacity-60 text-sm leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                    <p class="mb-4">Your recordings are stored on your device, not in the cloud, and will not automatically transfer if you change devices. You can use an app like Dropbox or Google Drive to back up your recordings:</p>
+                    <p>
+                        <ul class="mb-4 ml-4 list-decimal list-outside">
+                            <li>Open the app and switch to the “Listen” tab.</li>
+                            <li>Select all of the recordings you wish to backup.</li>
+                            <li>Select the share icon from the action bar at the top of the screen.</li>
+                            <li>Choose the app you want to use for backing up your recordings.</li>
+                            <li>Wait for them to upload.</li>
+                            <li>If you have recordings in more than one folder, then repeat the above steps for all of the folders you wish to copy over to the new device.</li>
+                        </ul>
+                    </p>
+                    <p class="mb-4">You can also use an app like <a class="text-dpgreen" href="https://play.google.com/store/apps/details?id=com.ttxapps.dropsync">Dropsync</a> to do this for you automatically.</p>
+                    <p>
+                        See also:
+                        <ul class="mb-4 ml-4 list-disc list-outside">
+                            <li><a class="text-dpgreen" href="#how-do-i-transfer-my-recordings-to-my-computer">How do I transfer my recordings to my computer?</a></li>
+                            <li><a class="text-dpgreen" href="#i-accidently-deleted-a-recording">I accidentally deleted a recording! How can I get it back?</a></li>
+                        </ul>
+                    </p>
                 </div>
             </div>
-            <div class="mb-8 px-8 py-4 border-2 border-dpgreen rounded text-dpdarkblue text-lg">
+            <div id="how-do-i-transfer-my-recordings-to-my-computer" class="mb-8 px-8 py-4 border-2 border-dpgreen rounded text-dpdarkblue md:text-lg">
                 <div class="question flex items-center justify-between cursor-pointer">
                     How do I transfer my recordings to my computer?
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,10 +69,36 @@ import '../styles/digipom.css';
                     </svg>
                 </div>
                 <div class="answer hidden mt-4 text-dpdarkblue text-opacity-60 text-sm leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                    <p class="mb-4">It’s highly recommended to back up the recordings on your computer before opening or modifying them. Some phones have been known to corrupt the recordings when the person played them back directly from the device.</p>
+                    <p>
+                        If you're using Windows:
+                        <ul class="mb-4 ml-4 list-decimal list-outside">
+                            <li>Connect the phone to your PC with your USB cable.</li>
+                            <li>Make sure your phone is in USB or media storage mode.</li>
+                            <li>Browse to the phone from your computer.</li>
+                            <li>Locate the files; by default they will be stored in the “EasyVoiceRecorder” folder.</li>
+                        </ul>
+                    </p>
+                    <p>
+                        If you’re using a Mac:
+                        <ul class="mb-4 ml-4 list-decimal list-outside">
+                            <li>Download and install Android File Transfer before connecting the USB cable.</li>
+                            <li>Make sure your phone is in USB or media storage mode.</li>
+                            <li>Browse to the phone from your computer.</li>
+                            <li>Locate the files; by default they will be stored in the “EasyVoiceRecorder” folder.</li>
+                        </ul>
+                    </p>
+                    <p class="mb-4">If you can see files only on your device but not on your computer, then try restarting your device.</p>
+                    <p>
+                        See also:
+                        <ul class="mb-4 ml-4 list-disc list-outside">
+                            <li><a class="text-dpgreen" href="#how-do-i-back-up-my-recordings">How do I back up my recordings?</a></li>
+                            <li><a class="text-dpgreen" href="#i-accidently-deleted-a-recording">I accidentally deleted a recording! How can I get it back?</a></li>
+                        </ul>
+                    </p>
                 </div>
             </div>
-            <div class="mb-8 px-8 py-4 border-2 border-dpgreen rounded text-dpdarkblue text-lg">
+            <div class="mb-8 px-8 py-4 border-2 border-dpgreen rounded text-dpdarkblue md:text-lg">
                 <div class="question flex items-center justify-between cursor-pointer">
                     How to use an external microphone?
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,10 +109,17 @@ import '../styles/digipom.css';
                     </svg>
                 </div>
                 <div class="answer hidden mt-4 text-dpdarkblue text-opacity-60 text-sm leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                    <p class="mb-4">On the latest Android devices, all you need to do is plug the microphone into your device’s headphone jack. Once the external microphone is plugged in, the device handles everything automatically.</p>
+                    <p class="mb-4">To ensure that you do record from the external microphone, set Settings &gt; Tuning &gt; Microphone to “Main”.</p>
+                    <p>
+                        See also:
+                        <ul class="mb-4 ml-4 list-disc list-outside">
+                            <li><a class="text-dpgreen" href="#how-to-use-bluetooth-mode">How to use Bluetooth mode?</a></li>
+                        </ul>
+                    </p>
                 </div>
             </div>
-            <div class="px-8 py-4 border-2 border-dpgreen rounded text-dpdarkblue text-lg">
+            <div id="how-to-use-bluetooth-mode" class="px-8 py-4 border-2 border-dpgreen rounded text-dpdarkblue md:text-lg">
                 <div class="question flex items-center justify-between cursor-pointer">
                     How to use Bluetooth mode?
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +130,14 @@ import '../styles/digipom.css';
                     </svg>
                 </div>
                 <div class="answer hidden mt-4 text-dpdarkblue text-opacity-60 text-sm leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                    <p class="mb-4">To record with Bluetooth, first check your device settings and ensure that Bluetooth is enabled and that your microphone is paired and connected. In your Bluetooth microphone settings, ensure that “Media audio” is checked. Once that’s done, you can record from Bluetooth by returning to the app and setting Settings &gt; Tuning &gt; Microphone to “Bluetooth”.</p>
+                    <p class="mb-4">Bluetooth only works with 8000Hz mono recordings. On some devices, Bluetooth is supported only for phone calls, and not for application audio.</p>
+                    <p>
+                        See also:
+                        <ul class="mb-4 ml-4 list-disc list-outside">
+                            <li><a class="text-dpgreen" href="#which-devices-have-known-issues">Which devices have known issues?</a></li>
+                        </ul>
+                    </p>
                 </div>
             </div>
         </div>
@@ -87,21 +145,21 @@ import '../styles/digipom.css';
 
     <section class="px-4 mb-8 lg:px-0 lg:max-w-[1110px] lg:mx-auto">
         <h2 class="font-bold text-bigapp text-center mb-12">Troubleshooting</h2>
-        <div class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
+        <div id="i-accidently-deleted-a-recording" class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
             <div class="mb-4 font-bold text-sl text-dpdarkblue">I accidentally deleted a recording! How can I get it back?</div>
             <p>
                 Easy Voice Recorder doesn’t store remote copies of your recordings, so unfortunately, it’s unable to restore a deleted recording.<br>
                 You might be able to recover the file using one of these guides:
                 <ul class="mb-4 ml-4 list-disc list-outside">
-                    <li><a class="text-dpgreen" href="https://www.droidviews.com/how-to-recover-deleted-files-on-android-phones-and-windows-computer/" target="_blank">How to Recover Deleted Files on Android Devices and Windows Computers</a></li>
-                    <li><a class="text-dpgreen" href="http://www.androidpit.com/how-to-recover-lost-data" target="_blank">How to Recover Lost Data on Android (Rooted or Not)</a></li>
-                    <li><a class="text-dpgreen" href="https://www.youtube.com/watch?v=tGw1fxUD-uY" target="_blank">Recover Deleted Files on Android in a Few Minutes! (Video)</a></li>
+                    <li><a class="text-dpgreen" href="https://www.droidviews.com/how-to-recover-deleted-files-on-android-phones-and-windows-computer/">How to Recover Deleted Files on Android Devices and Windows Computers</a></li>
+                    <li><a class="text-dpgreen" href="http://www.androidpit.com/how-to-recover-lost-data">How to Recover Lost Data on Android (Rooted or Not)</a></li>
+                    <li><a class="text-dpgreen" href="https://www.youtube.com/watch?v=tGw1fxUD-uY">Recover Deleted Files on Android in a Few Minutes! (Video)</a></li>
                 </ul>
             </p>
             <p class="mb-4">It may be possible to use the services of a data recovery specialist. The chances of a successful recovery increase the less you use your phone and the sooner this is done.</p>
             <p class="mb-4">
-                This blog post goes into more detail: <a class="text-dpgreen" href="https://blog.avast.com/2014/07/09/android-foreniscs-pt-2-how-we-recovered-erased-data/" target="_blank">Android Forensics, Part 1: How We Recovered (Supposedly) Erased Data</a>.<br>
-                To help avoid this in the future, you can install <a class="text-dpgreen" href="https://play.google.com/store/apps/details?id=com.ttxapps.dropsync&hl=en" target="_blank">Dropsync</a> to automatically back up your recordings to Dropbox. For easier recovery of deleted files, you can also try <a class="text-dpgreen" href="https://lifehacker.com/dumpster-is-a-recycle-bin-for-android-to-restore-delete-1606417292" target="_blank">Dumpster</a>, a recycle bin for your Android device.
+                This blog post goes into more detail: <a class="text-dpgreen" href="https://blog.avast.com/2014/07/09/android-foreniscs-pt-2-how-we-recovered-erased-data/">Android Forensics, Part 1: How We Recovered (Supposedly) Erased Data</a>.<br>
+                To help avoid this in the future, you can install <a class="text-dpgreen" href="https://play.google.com/store/apps/details?id=com.ttxapps.dropsync&hl=en">Dropsync</a> to automatically back up your recordings to Dropbox. For easier recovery of deleted files, you can also try <a class="text-dpgreen" href="https://lifehacker.com/dumpster-is-a-recycle-bin-for-android-to-restore-delete-1606417292">Dumpster</a>, a recycle bin for your Android device.
             </p>
         </div>
         <div class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
@@ -117,13 +175,13 @@ import '../styles/digipom.css';
             <p>
                 See also:
                 <ul class="mb-4 ml-4 list-disc list-outside">
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#phone_calls" target="_blank">I can’t record phone calls!</a></li>
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#silent_recording" target="_blank">Parts of my recording are missing!</a></li>
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#bad_devices" target="_blank">Which devices have known issues?</a></li>
+                    <li><a class="text-dpgreen" href="#i-cant-record-phone-calls">I can’t record phone calls!</a></li>
+                    <li><a class="text-dpgreen" href="#parts-of-my-recording-are-missing">Parts of my recording are missing!</a></li>
+                    <li><a class="text-dpgreen" href="#which-devices-have-known-issues">Which devices have known issues?</a></li>
                 </ul>
             </p>
         </div>
-        <div class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
+        <div id="i-cant-record-phone-calls" class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
             <div class="mb-4 font-bold text-sl text-dpdarkblue">I can’t record phone calls!</div>
             <p>Easy Voice Recorder cannot record phone calls on most phones, as this is blocked by the hardware or by the operating system itself. As a workaround, you may be able to record the call by using the speaker phone and by trying different options under Settings &gt; Main use.</p>
         </div>
@@ -139,30 +197,30 @@ import '../styles/digipom.css';
             <p>If your recording is too large to send by email or SMS, then here are a couple of options you can try:
                 <ul class="mb-4 ml-4 list-disc list-outside">
                     <li>Turn on compression under Settings &gt; Advanced & troubleshooting &gt; Compress PCM files when sharing, then try again.</li>
-                    <li>Use a third-party file sharing app, like <a class="text-dpgreen" href="https://play.google.com/store/apps/details?id=com.dropbox.android" target="_blank">Dropbox</a> or <a class="text-dpgreen" href="https://wetransfer.com/" target="_blank">We Transfer</a>.</li>
+                    <li>Use a third-party file sharing app, like <a class="text-dpgreen" href="https://play.google.com/store/apps/details?id=com.dropbox.android">Dropbox</a> or <a class="text-dpgreen" href="https://wetransfer.com/">We Transfer</a>.</li>
                 </ul>
             </p>
             <p>
                 See also:
                 <ul class="mb-4 ml-4 list-disc list-outside">
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#phone_calls" target="_blank">How do I transfer my recordings to my computer?</a></li>
+                    <li><a class="text-dpgreen" href="#how-do-i-transfer-my-recordings-to-my-computer">How do I transfer my recordings to my computer?</a></li>
                 </ul>
             </p>
         </div>
-        <div class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
+        <div id="my-recordings-sound-terrible" class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
             <div class="mb-4 font-bold text-sl text-dpdarkblue">My recordings sound terrible!</div>
             <p class="mb-4">On some devices, a hardware fault may cause poor recording quality or may cause recordings to sound like chipmunks. To improve the recording quality, keep the device away from noise and ensure that any sound-boosting options in the settings (i.e. xLOUD) are also turned off. You may also try turning off Boost volume (gain) by going to the Recording screen, touching the Filters icon (magic wand), and moving the boost slider all the way to zero.</p>
             <p>
                 Changing Settings &gt; Sound quality to “High” and trying different options under Settings &gt; Main use may help to fix these issues.<br>
                 See also:
                 <ul class="mb-4 ml-4 list-disc list-outside">
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#phone_calls" target="_blank">I can’t record phone calls!</a></li>
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#silent_recording" target="_blank">Parts of my recording are missing!</a></li>
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#bad_devices" target="_blank">Which devices have known issues?</a></li>
+                    <li><a class="text-dpgreen" href="#i-cant-record-phone-calls">I can’t record phone calls!</a></li>
+                    <li><a class="text-dpgreen" href="#parts-of-my-recording-are-missing">Parts of my recording are missing!</a></li>
+                    <li><a class="text-dpgreen" href="#which-devices-have-known-issues">Which devices have known issues?</a></li>
                 </ul>
             </p>
         </div>
-        <div class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
+        <div id="parts-of-my-recording-are-missing" class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
             <div class="mb-4 font-bold text-sl text-dpdarkblue">Parts of my recording are missing!</div>
             <p class="mb-4">
                 Some devices turn their microphones off when their screens go off, and Easy Voice Recorder cannot detect this on every device. For these devices, you will need to force the screen to remain on while Easy Voice Recorder is recording.<br>
@@ -171,11 +229,11 @@ import '../styles/digipom.css';
             <p>
                 See also:
                 <ul class="mb-4 ml-4 list-disc list-outside">
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#phone_calls" target="_blank">The app keeps getting interrupted!</a></li>
+                    <li><a class="text-dpgreen" href="#the-app-keeps-getting-interrupted">The app keeps getting interrupted!</a></li>
                 </ul>
             </p>
         </div>
-        <div class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
+        <div id="the-app-keeps-getting-interrupted" class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
             <div class="mb-4 font-bold text-sl text-dpdarkblue">The app keeps getting interrupted!</div>
             <p class="mb-4">
                 On some devices, the system will terminate running apps when the device goes to sleep. To keep the device awake, go to Settings &gt; Advanced & troubleshooting and set “Sleep mode while recording” to “Allow dimmed screen”.<br>
@@ -184,11 +242,11 @@ import '../styles/digipom.css';
             <p>
                 See also:
                 <ul class="mb-4 ml-4 list-disc list-outside">
-                    <li><a class="text-dpgreen" href="https://www.digipom.com/easy-voice-recorder-help/#phone_calls" target="_blank">Parts of my recording are missing!</a></li>
+                    <li><a class="text-dpgreen" href="#parts-of-my-recording-are-missing">Parts of my recording are missing!</a></li>
                 </ul>
             </p>
         </div>
-        <div class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
+        <div id="which-devices-have-known-issues" class="mb-12 text-dpdarkblue text-opacity-60 text-sm leading-6">
             <div class="mb-4 font-bold text-sl text-dpdarkblue">Which devices have known issues?</div>
             <p class="mb-4">
                 <strong>Nexus devices</strong><br>
@@ -219,6 +277,21 @@ import '../styles/digipom.css';
                 Note 4 and Note 4 Edge
             </p>
             <p class="mb-4">Bluetooth recording can be problematic on these devices. On Android 4.4 KitKat, the recording may simply fail sporadically, and on Android 5.0 Lollipop, the recording may silently switch to the device microphone when putting the app into background mode or turning off the screen.</p>
+            <p class="mb-4">
+                <strong>Sony</strong><br>
+                all models with xLOUD
+            </p>
+            <p class="mb-4">xLOUD may cause loud recordings to be distorted, even when gain is turned off.</p>
+            <p>
+                See also:
+                <ul class="mb-4 ml-4 list-disc list-outside">
+                    <li><a class="text-dpgreen" href="#my-recordings-sound-terrible">My recordings sound terrible!</a></li>
+                </ul>
+            </p>
+            <p class="mb-4">
+                <strong>Sony XPeria Mini Pro</strong><br>
+            </p>
+            <p class="mb-4">A hardware problem may cause a buzzing / metronome noise.CD-quality sample rates may not work.</p>
         </div>
     </section>
 </Layout>
