@@ -9,10 +9,10 @@ module.exports = {
 				sans: ["Poppins", ...defaultTheme.fontFamily.sans],
 			},
 			fontSize: {
-				logo: ["32px", "48px"],
-				app: ["22px", "38px"],
-				bigapp: ["34px", "51px"],
-				reallybig: ["40px", "69px"],
+				thirtytwo: ["32px", "48px"],
+				twentytwo: ["22px", "38px"],
+				thirtyfour: ["34px", "51px"],
+				forty: ["40px", "69px"],
 			},
 			colors: {
 				dpgreen: "#408712",
