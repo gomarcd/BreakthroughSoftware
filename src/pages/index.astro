@@ -97,7 +97,7 @@ import '../styles/digipom.css';
 		<div class="md:flex md:justify-between">
 			<!-- Show latest 4 posts -->
 			{
-				newsPosts.slice(0,4).sort((a, b) => new Date(b.data.publishedDate) - new Date(a.data.publishedDate)).map((post) => (
+				newsPosts.sort((a, b) => new Date(b.data.publishedDate) - new Date(a.data.publishedDate)).slice(0,4).map((post) => (
 						<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
 							<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">
 								{post.data.title}
