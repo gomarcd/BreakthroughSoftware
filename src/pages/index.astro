@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+const newsPosts = await getCollection("news");
 import '../styles/digipom.css';
 ---
 
@@ -93,55 +95,26 @@ import '../styles/digipom.css';
 	<section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
 		<h3 class="font-semibold text-dpgreen mb-2">News</h3>
 		<div class="md:flex md:justify-between">
-			<!-- Looped news items -->
-			<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
-				<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">Easy Voice Recorder Pro is now part of Google Play Pass</h2>
-				<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
-					Easy Voice Recorder Pro is now available with Google Play Pass! Unlock all of the pro Easy Voice Recorder Pro is now available with Google Play Pass! Unlock all of the pro
-				</p>
-				<a href="/" class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
-					Read more
-					<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</a>
-			</div>
-			<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max gap-4 content-between mb-10">
-				<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">Easy Voice Recorder is editors' choice over at Google Play</h2>
-				<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
-					I'm very happy to announce that Easy Voice Recorder has been featured...
-				</p>
-				<a href="/" class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
-					Read more
-					<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</a>
-			</div>
-			<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max gap-4 content-between mb-10">
-				<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">Easy Voice Recorder for iOS, and recent reviews</h2>
-				<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
-					Easy Voice Recorder is now available for iOS devices! It can be downloaded from...
-				</p>
-				<a href="/" class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
-					Read more
-					<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</a>
-			</div>
-			<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max gap-4 content-between mb-10">
-				<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">The Great Thanksgiving charity giveaway</h2>
-				<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
-					Welcome to The Great Thanksgiving Charity Giveaway! We're happy to ...
-				</p>
-				<a href="/" class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
-					Read more
-					<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</a>
-			</div>
+			<!-- Show latest 4 posts -->
+			{
+				newsPosts.slice(0,4).sort((a, b) => new Date(b.data.publishedDate) - new Date(a.data.publishedDate)).map((post) => (
+						<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
+							<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">
+								{post.data.title}
+							</h2>
+							<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
+								{post.data.description}
+							</p>
+							<a href={`/news/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
+								Read more
+								<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+						</div>					
+					))
+			}
+			
 			<!-- END Looped news items -->
 		</div>
 	</section>
