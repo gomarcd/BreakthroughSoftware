@@ -1,7 +1,7 @@
-import { z, defineCollection } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const news = defineCollection({
-	type: 'content',
+	type: "content",
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),

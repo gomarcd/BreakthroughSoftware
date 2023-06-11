@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
 const newsPosts = await getCollection("news");
 import '../../styles/digipom.css';
+import { format } from 'date-fns';
 
 export async function getStaticPaths() {
     const newsEntries = await getCollection('news');
@@ -21,8 +22,8 @@ const { data } = entry;
 <Layout title="News - Digipom">
 	<section class="px-4 py-3 lg:px-0 mb-14 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-start">
 		<div class="w-full md:w-[730px] float-right">
-            <h2 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal my-4">{data.title}</h2>
-            <div class="mb-8">{data.publishedDate}</div>
+            <h2 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal my-4">{data.title}</h2>
+            <div class="mb-8">{format(new Date(data.publishedDate), 'MMMM d, yyyy')}</div>
             <div class="mb-8"><Content /></div>
             <img src={data.image} class="mb-8" />
             <div class="mb-6">Tags: <a class="text-dpgreen" href="/">{data.tags}</a></div>
