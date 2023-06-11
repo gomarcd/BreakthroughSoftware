@@ -11,7 +11,7 @@ import '../styles/digipom.css';
     </section>
 
 	<section class="px-4 py-3 lg:px-0 mb-12 lg:max-w-[1110px] lg:mx-auto md:flex md:items-start md:justify-between gap-10">
-		<div class="md:w-1/2">
+		<a href="/" class="md:w-1/2">
 			<img class="w-[540px] h-[246.04px] object-cover object-center md:object-top" src="/images/facebook_3x-1024x858.png" alt="Featured new post" />
             <div class="font-bold text-thirtyfour tracking-tight leading-normal my-4">
 				Easy Voice Recorder Pro is now part of Google Play Pass
@@ -19,21 +19,21 @@ import '../styles/digipom.css';
             <div class="leading-normal mb-4">
 				Easy Voice Recorder Pro is now available with Google Play Pass! Unlock all of the pro features with your subscription. Check it out!
 			</div>
-		</div>
+		</a>
         <div class="hidden md:block w-1/2">
             <div>
-                <div class="mb-6 flex items-start gap-6">
+                <a href="/" class="mb-6 flex items-start gap-6">
                     <img class="w-[255px] h-[143px] object-top object-cover" src="https://placehold.co/255x143" alt="Blog post image" />
                     <div class="font-bold text-twentytwo text-dpdarkblue">
                         Easy Voice Recorder is editors’ choice over at Google Play
                     </div>
-                </div>
-                <div class="flex items-start gap-6">
+                </a>
+                <a href="/" class="flex items-start gap-6">
                     <img class="w-[255px] h-[143px] object-top object-cover" src="https://placehold.co/255x143" alt="Blog post image" />
                     <div class="font-bold text-twentytwo text-dpdarkblue">
                         Easy Voice Recorder for iOS, and recent reviews
                     </div>
-                </div>
+                </a>
             </div>
 		</div>
 	</section>
@@ -43,11 +43,11 @@ import '../styles/digipom.css';
 		<div class="md:flex md:justify-between">
 			<!-- Show latest 4 posts -->
 			{
-				newsPosts.sort((a, b) => new Date(b.data.publishedDate) - new Date(a.data.publishedDate)).slice(0,4).map((post) => (
+				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
 						<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
-							<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">
+							<a href="/" class="font-bold text-twentytwo text-dpdarkblue mb-1">
 								{post.data.title}
-							</h2>
+							</a>
 							<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
 								{post.data.description}
 							</p>
@@ -66,11 +66,11 @@ import '../styles/digipom.css';
         <div class="hidden md:flex md:justify-between">
 			<!-- Show latest 4 posts -->
 			{
-				newsPosts.sort((a, b) => new Date(b.data.publishedDate) - new Date(a.data.publishedDate)).slice(0,4).map((post) => (
+				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
 						<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
-							<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">
+							<a href="/" class="font-bold text-twentytwo text-dpdarkblue mb-1">
 								{post.data.title}
-							</h2>
+							</a>
 							<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
 								{post.data.description}
 							</p>

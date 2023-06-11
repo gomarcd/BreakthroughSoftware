@@ -39,7 +39,7 @@ import '../styles/digipom.css';
 
 	<section class="px-4 py-3 lg:px-0 mb-12 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-between">
 		<div class="md:w-[530px]">
-			<h2 class="font-bold text-twentytwo lg:text-thirtyfour mb-4">Easy Voice Recorder</h2>
+			<a href="/easy-voice-recorder" class="font-bold text-twentytwo lg:text-thirtyfour mb-4">Easy Voice Recorder</a>
 			<div class="text-dpdarkblue text-lg md:text-twentytwo text-opacity-60 mb-4">
 				Your everyday companion to record important moments. Capture meetings, personal notes, classes, songs, and much more!
 			</div>
@@ -68,7 +68,7 @@ import '../styles/digipom.css';
 
 	<section class="px-4 py-3 lg:px-0 mb-12 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-between">
 		<div class="md:w-[530px]">
-			<h2 class="font-bold text-twentytwo lg:text-thirtyfour mb-4">Night Filter</h2>
+			<a href="/night-filter" class="font-bold text-twentytwo lg:text-thirtyfour mb-4">Night Filter</a>
 			<div class="text-dpdarkblue text-lg md:text-twentytwo text-opacity-60 mb-4">
 				Night Filter makes it easy for you to dim your screen, adjust your color tint, and more! Use it to read at night with less eye strain and correct for an excessive screen tint.
 			</div>
@@ -97,12 +97,12 @@ import '../styles/digipom.css';
 		<div class="md:flex md:justify-between">
 			<!-- Show latest 4 posts -->
 			{
-				newsPosts.sort((a, b) => new Date(b.data.publishedDate) - new Date(a.data.publishedDate)).slice(0,4).map((post) => (
+				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
 						<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
-							<h2 class="font-bold text-twentytwo text-dpdarkblue mb-1">
+							<a href="/" class="font-bold text-twentytwo leading-8 text-dpdarkblue mb-2">
 								{post.data.title}
-							</h2>
-							<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
+							</a>
+							<p class="text-dpdarkblue text-base text-opacity-60 mb-4 line-clamp-3">
 								{post.data.description}
 							</p>
 							<a href={`/news/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
