@@ -37,21 +37,21 @@ const { data } = entry;
 			<!-- Show latest 4 posts -->
 			{
 				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
-						<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
-							<a href="/" class="font-bold text-twentytwo text-dpdarkblue mb-1">
-								{post.data.title}
-							</a>
-							<p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
-								{post.data.description}
-							</p>
-							<a href={`/news/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
-								Read more
-								<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</a>
-						</div>					
-					))
+                    <div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
+                        <a href="/" class="font-bold text-twentytwo text-dpdarkblue mb-1">
+                            {post.data.title}
+                        </a>
+                        <p class="text-dpdarkblue text-base text-opacity-60 mb-1 line-clamp-3">
+                            {post.data.description}
+                        </p>
+                        <a href={`/news/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
+                            Read more
+                            <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>					
+                ))
 			}
 			
 			<!-- END Looped news items -->
