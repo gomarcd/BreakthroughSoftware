@@ -1,12 +1,17 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
-const newsPosts = await getCollection("news");
 import '../../styles/digipom.css';
 import { format } from 'date-fns';
+import sanitizeHtml from 'sanitize-html';
+import MarkdownIt from 'markdown-it';
+
+const latestPosts = await getCollection("news");
+const parser = new MarkdownIt();
 
 export async function getStaticPaths() {
     const newsEntries = await getCollection('news');
+
     return newsEntries.map((entry) => ({
         params: { slug: entry.slug },
         props: { entry },
@@ -15,19 +20,24 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const { data } = entry;
 
 ---
 
 <Layout title="News - Digipom">
 	<section class="px-4 py-3 lg:px-0 mb-14 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-start">
 		<div class="w-full md:w-[730px] float-right">
-            <h2 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal my-4">{data.title}</h2>
-            <div class="mb-8">{format(new Date(data.publishedDate), 'MMMM d, yyyy')}</div>
-            <div class="mb-8"><Content /></div>
-            <img src={data.image} class="mb-8" />
-            <div class="mb-6">Tags: <a class="text-dpgreen" href="/">{data.tags}</a></div>
-            <div class="flex items-center gap-2 mb-12 md:mb-0">Share: <a href="/"><img src="/images/Rss.png" /></a> <a href="/"><img src="/images/Twitter.png" /></a></div>
+            <h2 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal my-4">{entry.data.title}</h2>
+            <img src={entry.data.image} class="mb-8" />
+            <div class="mb-8">{format(new Date(entry.data.publishedDate), 'MMMM d, yyyy')}</div>
+            <Content />
+            <div class="mb-6">Tags: 
+            	{
+            		entry.data.tags.map(tag => (
+		        		<a class="text-dpgreen" href="/">#{tag} </a>
+	            	))
+	            }
+			</div>
+            <div class="flex items-center gap-2 mb-12 md:mb-0">Share: <a href="/rss.xml"><img src="/images/Rss.png" /></a> <a href="https://twitter.com/Digipom"><img src="/images/Twitter.png" /></a></div>
 		</div>
 	</section>
 
@@ -36,7 +46,7 @@ const { data } = entry;
 		<div class="md:flex md:justify-between">
 			<!-- Show latest 4 posts -->
 			{
-				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
+				latestPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
                     <div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
 						<a href={`/news/${post.slug}`} class="font-bold text-twentytwo leading-8 text-dpdarkblue mb-2">
 							{post.data.title}
@@ -56,5 +66,10 @@ const { data } = entry;
 			
 			<!-- END Looped news items -->
 		</div>
+		<style is:global>
+			p {
+				padding-bottom: 12px;
+			}
+		</style>
 	</section>
 </Layout>
