@@ -66,10 +66,40 @@ const { Content } = await entry.render();
 			
 			<!-- END Looped news items -->
 		</div>
-		<style is:global>
-			p {
-				padding-bottom: 12px;
-			}
-		</style>
 	</section>
 </Layout>
+
+<style is:global>
+	p {
+		padding-bottom: 18px;
+	}
+	p:last-child {
+		padding-bottom: 0;
+	}
+	a:link, a:active, a:visited, a:focus {
+		color: #408712;
+	}
+	h1, h2, h3, h4, h5 {
+		color: #0E0E2C;
+		font-weight: 700 !important;
+	}
+	h1 {
+		font-size: 1.8rem !important;
+	}
+	h2 {
+		font-size: 1.5rem !important;
+	}
+	h3 {
+		font-size: 1.3rem !important;
+	}
+	h4 {
+		font-size: 1.2rem !important;
+	}
+	h5 {
+		font-size: 1.1rem !important;
+	}
+	.astro-code {
+		padding: 12px;
+		border-radius: 4px;
+	}
+</style>
