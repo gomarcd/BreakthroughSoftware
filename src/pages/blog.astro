@@ -52,10 +52,9 @@ import '../styles/digipom.css';
 
 	</section>
 
-    <section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
+    <!-- <section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
 		<div class="mb-10 font-extrabold text-thirtyfour text-dpdarkblue tracking-tight">Latest articles</div>
 		<div class="md:flex md:justify-between">
-			<!-- Show latest 4 posts -->
 			{
 				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
 					<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
@@ -74,10 +73,8 @@ import '../styles/digipom.css';
 					</div>					
 				))
 			}
-			<!-- END Looped news items -->
 		</div>
         <div class="hidden md:flex md:justify-between">
-			<!-- Show latest 4 posts -->
 			{
 				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(4,8).map((post) => (
 					<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
@@ -96,7 +93,31 @@ import '../styles/digipom.css';
 					</div>					
 				))
 			}
-			<!-- END Looped news items -->
 		</div>
+	</section> -->
+
+	<section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
+		<div class="mb-10 font-extrabold text-thirtyfour text-dpdarkblue tracking-tight">Latest articles</div>
+		{
+			newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).map((post) => (
+				<div class="flex items-center mb-10">
+
+					{
+						post.data.image ? (
+							// post has an image
+							<img class="w-[120px] h-[120px]" src={post.data.image} />
+						) : (
+							// placeholder image if not found in post
+							<img class="w-[120px] h-[120px]" src="/images/facebook_3x-1024x858.png" />
+						)
+					}
+
+					<div class="ml-4">
+						<div>{post.data.title}</div>
+						<div class="text-dpdarkblue text-base text-opacity-60 mb-4 line-clamp-3">{post.data.description}</div>
+					</div>
+				</div>					
+			))
+		}
 	</section>
 </Layout>
