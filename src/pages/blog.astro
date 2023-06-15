@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from "astro:content";
 const newsPosts = await getCollection("news");
 import '../styles/digipom.css';
+import { format } from 'date-fns';
 ---
 
 <Layout title="Blog - Digipom">
@@ -109,13 +110,14 @@ import '../styles/digipom.css';
 									<img class="w-[180px] h-[120px] object-cover" src={post.data.image} />
 								) : (
 									// placeholder image if not found in post
-									<img class="w-[180px] h-[120px] object-cover" src="https://placehold.co/180x120" />
+									<img class="w-[180px] h-[120px] object-cover" src="/images/Dog-logo-final.png" />
 								)
 							}
 						</div>
 						<div class="w-full pl-4">
-							<div class="leading-none mb-2">{post.data.title}</div>
-							<div class="text-dpdarkblue text-base text-opacity-60 line-clamp-3">{post.data.description}</div>
+							<div class="leading-none">{post.data.title}</div>
+							<div class="text-dpdarkblue text-base text-opacity-60 mb-2">{format(new Date(post.data.publishedDate), 'MMMM d, yyyy')}</div>
+							<div class="text-dpdarkblue text-base text-opacity-60 line-clamp-2">{post.data.description}</div>
 						</div>
 					</div>	
 				</a>		
