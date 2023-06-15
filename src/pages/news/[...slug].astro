@@ -24,7 +24,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout title="News - Digipom">
-	<section class="px-4 py-3 lg:px-0 mb-14 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-start">
+	<section class="blog-post px-4 py-3 lg:px-0 mb-14 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-start">
 		<div class="w-full md:w-[730px] float-right">
             <h2 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal my-4">{entry.data.title}</h2>
             <img src={entry.data.image} class="mb-8" />
@@ -70,35 +70,35 @@ const { Content } = await entry.render();
 </Layout>
 
 <style is:global>
-	p {
+	.blog-post p {
 		padding-bottom: 18px;
 	}
-	p:last-child {
+	.blog-post p:last-child {
 		padding-bottom: 0;
 	}
-	a:link, a:active, a:visited, a:focus {
+	.blog-post a:link, .blog-post a:active, .blog-post a:visited, .blog-post a:focus {
 		color: #408712;
 	}
-	h1, h2, h3, h4, h5 {
+	.blog-post h1, .blog-post h2, .blog-post h3, .blog-post h4, .blog-post h5 {
 		color: #0E0E2C;
 		font-weight: 700 !important;
 	}
-	h1 {
+	.blog-post h1 {
 		font-size: 1.8rem !important;
 	}
-	h2 {
+	.blog-post h2 {
 		font-size: 1.5rem !important;
 	}
-	h3 {
+	.blog-post h3 {
 		font-size: 1.3rem !important;
 	}
-	h4 {
+	.blog-post h4 {
 		font-size: 1.2rem !important;
 	}
-	h5 {
+	h.blog-post 5 {
 		font-size: 1.1rem !important;
 	}
-	.astro-code {
+	.blog-post .astro-code {
 		padding: 12px;
 		border-radius: 4px;
 	}
