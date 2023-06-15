@@ -101,26 +101,24 @@ import { format } from 'date-fns';
 		<div class="mb-10 font-extrabold text-thirtyfour text-dpdarkblue tracking-tight">Latest articles</div>
 		{
 			newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).map((post) => (
-				<a href={`/news/${post.slug}`}>
-					<div class="flex items-center mb-10">
-						<div class="w-[180px]">
-							{
-								post.data.image ? (
-									// post has an image
-									<img class="w-[180px] h-[120px] object-contain" src={post.data.image} />
-								) : (
-									// placeholder image if not found in post
-									<img class="w-[180px] h-[120px] object-scale-down" src="/images/Dog-logo-final.png" />
-								)
-							}
-						</div>
-						<div class="w-full pl-4">
-							<div class="leading-none">{post.data.title}</div>
-							<div class="text-dpdarkblue text-base text-opacity-60 mb-2">{format(new Date(post.data.publishedDate), 'MMMM d, yyyy')}</div>
-							<div class="text-dpdarkblue text-base text-opacity-60 line-clamp-2">{post.data.description}</div>
-						</div>
-					</div>	
-				</a>		
+				<div class="flex items-center mb-10">
+					<a href={`/news/${post.slug}`} class="w-[180px]">
+						{
+							post.data.image ? (
+								// post has an image
+								<img class="w-[180px] h-[120px] object-contain" src={post.data.image} />
+							) : (
+								// placeholder image if not found in post
+								<img class="w-[180px] h-[120px] object-scale-down" src="https://placehold.co/180x120" />
+							)
+						}
+					</a>
+					<div class="w-full pl-4">
+						<a href={`/news/${post.slug}`}><div class="leading-none">{post.data.title}</div></a>
+						<div class="text-dpdarkblue text-base text-opacity-60 mb-2">{format(new Date(post.data.publishedDate), 'MMMM d, yyyy')}</div>
+						<div class="text-dpdarkblue text-base text-opacity-60 line-clamp-2">{post.data.description}</div>
+					</div>
+				</div>
 			))
 		}
 	</section>
