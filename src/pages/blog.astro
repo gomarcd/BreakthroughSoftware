@@ -107,10 +107,10 @@ import { format } from 'date-fns';
 							{
 								post.data.image ? (
 									// post has an image
-									<img class="w-[180px] h-[120px] object-cover" src={post.data.image} />
+									<img class="w-[180px] h-[120px] object-contain" src={post.data.image} />
 								) : (
 									// placeholder image if not found in post
-									<img class="w-[180px] h-[120px] object-cover" src="/images/Dog-logo-final.png" />
+									<img class="w-[180px] h-[120px] object-scale-down" src="/images/Dog-logo-final.png" />
 								)
 							}
 						</div>
