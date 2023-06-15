@@ -102,7 +102,7 @@ import '../styles/digipom.css';
 			newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).map((post) => (
 				<a href={`/news/${post.slug}`}>
 					<div class="flex items-center mb-10">
-						<div class="w-1/5">
+						<div class="w-[180px]">
 							{
 								post.data.image ? (
 									// post has an image
@@ -113,7 +113,7 @@ import '../styles/digipom.css';
 								)
 							}
 						</div>
-						<div class="w-4/5 pl-4 lg:pl-0">
+						<div class="w-full pl-4">
 							<div>{post.data.title}</div>
 							<div class="text-dpdarkblue text-base text-opacity-60 line-clamp-3">{post.data.description}</div>
 						</div>
