@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '../../layouts/Layout.astro';
+const posts = await getCollection('news');
+
+export async function getStaticPaths() {
+  const newsEntries = await getCollection('news');
+
+  return newsEntries.flatMap((entry) => {
+    const { tags } = entry.data;
+    return tags.map((tag) => ({
+      params: { tag },
+      props: { entry, tags },
+    }));
+  });
+}
+
+const { entry } = Astro.props;
+const { tag } = entry.data.tags;
+
+const currentTag = Astro.params.tag;
+
+const postsWithTag = posts.filter((post) => post.data.tags.includes(currentTag));
+---
+
+<Layout title={`${currentTag} - Digipom`}>
+  Posts with tag <b>{currentTag}</b>: <br><br>
+  {postsWithTag.map((post) => (
+      <a href={`/news/${post.slug}`}>{post.data.title}</a>
+      <p>{post.data.publishedDate}</p>
+      <p>{post.data.description}</p>
+      <br>
+  ))}
+</Layout>
