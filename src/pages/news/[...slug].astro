@@ -33,7 +33,7 @@ const { Content } = await entry.render();
             <div class="mb-12">Tags: 
             	{
             		entry.data.tags.map(tag => (
-		        		<a class="text-dpgreen" href="/">#{tag} </a>
+		        		<a class="text-dpgreen" href={`/tags/${tag}`}>#{tag} </a>
 	            	))
 	            }
 			</div>
