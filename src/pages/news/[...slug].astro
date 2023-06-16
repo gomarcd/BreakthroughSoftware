@@ -26,7 +26,7 @@ const { Content } = await entry.render();
 <Layout title="News - Digipom">
 	<section class="blog-post px-4 py-3 lg:px-0 mb-14 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-start">
 		<div class="w-full md:w-[730px] float-right">
-            <h1 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal my-4">{entry.data.title}</h1>
+            <h1 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal">{entry.data.title}</h1>
             <div class="mb-16">{format(new Date(entry.data.publishedDate), 'MMMM d, yyyy')}</div>
 			{entry.data.image && (<img src={entry.data.image} class="mb-12" />)}
             <Content />
@@ -42,9 +42,8 @@ const { Content } = await entry.render();
 	</section>
 
     <section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
-		<a href="/blog" class="font-extrabold text-thirtyfour text-dpdarkblue tracking-tight">Latest articles</a>
+		<a href="/news" class="font-extrabold text-thirtyfour text-dpdarkblue tracking-tight">Latest articles</a>
 		<div class="md:flex md:justify-between mt-4 md:mt-8">
-			<!-- Show latest 4 posts -->
 			{
 				latestPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
                     <div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
@@ -63,8 +62,6 @@ const { Content } = await entry.render();
 					</div>					
                 ))
 			}
-			
-			<!-- END Looped news items -->
 		</div>
 	</section>
 </Layout>
@@ -96,7 +93,8 @@ const { Content } = await entry.render();
 	}
 	.blog-post h2 {
 		font-size: 40px !important;
-		margin-bottom: 40px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 	.blog-post h3 {
 		font-size: 1.3rem !important;
