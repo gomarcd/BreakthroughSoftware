@@ -28,7 +28,7 @@ const { Content } = await entry.render();
 		<div class="w-full md:w-[730px] float-right">
             <h1 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal my-4">{entry.data.title}</h1>
             <div class="mb-16">{format(new Date(entry.data.publishedDate), 'MMMM d, yyyy')}</div>
-			<img src={entry.data.image} class="mb-12" />
+			{entry.data.image && (<img src={entry.data.image} class="mb-12" />)}
             <Content />
             <div class="mb-12">Tags: 
             	{
