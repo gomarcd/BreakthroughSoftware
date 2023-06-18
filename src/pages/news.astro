@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+const newsPosts = await getCollection("news");
+import '../styles/digipom.css';
+import { format } from 'date-fns';
+---
+
+<Layout title="Blog - Digipom">
+    <section class="px-4 py-3 lg:px-0 md:mt-14 md:mb-16 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-between">
+        <div class="font-bold text-forty md:text-5xl text-dpdarkblue tracking-tight">Digipom <span class="text-dpgreen">news</span></div>
+    </section>
+
+
+	<section class="px-4 py-3 lg:px-0 mb-12 lg:max-w-[1110px] lg:mx-auto md:flex md:items-start md:justify-between gap-10">
+		{
+		 	newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,1).map((post) => (
+					<a href={`/news/${post.slug}`} class="md:w-1/2">
+						<img class="w-[540px] h-[246.04px] object-cover object-center md:object-top" src="/images/facebook_3x-1024x858.png" alt="Featured new post" />
+			            <div class="font-bold text-thirtyfour tracking-tight leading-normal my-4">
+							{post.data.title}
+						</div>
+			            <div class="leading-normal mb-4">
+							{post.data.description}
+						</div>
+					</a>
+			))
+		}
+	
+        <div class="hidden md:block w-1/2">
+            <div>
+				{
+				 	newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(1,2).map((post) => (	<a href={`/news/${post.slug}`} class="mb-6 flex items-start gap-6">
+		                    <img class="w-[255px] h-[143px] object-top object-cover" src="/images/Thumbnail_255x143.png" alt="Blog post image" />
+		                    <div class="font-bold text-twentytwo text-dpdarkblue">
+		                        {post.data.title}
+		                    </div>
+		                </a>
+        			))
+			 	}
+				{
+				 	newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(2,3).map((post) => (
+		                <a href={`/news/${post.slug}`} class="flex items-start gap-6">
+		                    <img class="w-[255px] h-[143px] object-top object-cover" src="/images/Thumbnail_255x143.png" alt="Blog post image" />
+		                    <div class="font-bold text-twentytwo text-dpdarkblue">
+		                        {post.data.title}
+		                    </div>
+		                </a>
+	                ))
+	            }
+            </div>
+		</div>
+
+	</section>
+
+    <!-- <section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
+		<div class="mb-10 font-extrabold text-thirtyfour text-dpdarkblue tracking-tight">Latest articles</div>
+		<div class="md:flex md:justify-between">
+			{
+				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
+					<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
+						<a href={`/news/${post.slug}`} class="font-bold text-twentytwo leading-8 text-dpdarkblue mb-2">
+							{post.data.title}
+						</a>
+						<p class="text-dpdarkblue text-base text-opacity-60 mb-4 line-clamp-3">
+							{post.data.description}
+						</p>
+						<a href={`/news/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
+							Read more
+							<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</a>
+					</div>					
+				))
+			}
+		</div>
+        <div class="hidden md:flex md:justify-between">
+			{
+				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(4,8).map((post) => (
+					<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
+						<a href={`/news/${post.slug}`} class="font-bold text-twentytwo leading-8 text-dpdarkblue mb-2">
+							{post.data.title}
+						</a>
+						<p class="text-dpdarkblue text-base text-opacity-60 mb-4 line-clamp-3">
+							{post.data.description}
+						</p>
+						<a href={`/news/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
+							Read more
+							<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</a>
+					</div>					
+				))
+			}
+		</div>
+	</section> -->
+
+	<section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
+		<div class="mb-10 font-extrabold text-thirtyfour text-dpdarkblue tracking-tight">Latest articles</div>
+		{
+			newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).map((post) => (
+				<div class="flex items-center mb-10">
+					<a href={`/news/${post.slug}`} class="w-[180px]">
+						{
+							post.data.image ? (
+								// post has an image
+								<img class="w-[180px] h-[120px] object-scale-down" src={post.data.image} />
+							) : (
+								// placeholder image if not found in post
+								<img class="w-[180px] h-[120px] object-scale-down" src="/images/Thumbnail_255x143.png" />
+							)
+						}
+					</a>
+					<div class="w-full pl-4">
+						<a href={`/news/${post.slug}`}><div class="leading-none">{post.data.title}</div></a>
+						<div class="text-dpdarkblue text-base text-opacity-60 mb-2">{format(new Date(post.data.publishedDate), 'MMMM d, yyyy')}</div>
+						<div class="text-dpdarkblue text-base text-opacity-60 line-clamp-2">{post.data.description}</div>
+					</div>
+				</div>
+			))
+		}
+	</section>
+</Layout>

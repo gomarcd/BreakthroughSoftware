@@ -1,0 +1,132 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '../../layouts/Layout.astro';
+import { slugify } from '../../utils/slugify';
+import '../../styles/digipom.css';
+import { format } from 'date-fns';
+
+const latestPosts = await getCollection("news");
+
+export async function getStaticPaths() {
+    const newsEntries = await getCollection('news');
+
+    return newsEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+};
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+---
+
+<Layout title="News - Digipom">
+	<section class="blog-post px-4 py-3 lg:px-0 mb-14 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-start">
+		<div class="w-full md:w-[730px] float-right">
+            <h1 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal">{entry.data.title}</h1>
+            <div class="mb-16">{format(new Date(entry.data.publishedDate), 'MMMM d, yyyy')}</div>
+			{entry.data.image && (<img src={entry.data.image} class="mb-12" />)}
+            <Content />
+            <div class="mb-12">Tags: 
+            	{
+            		entry.data.tags.map(tag => (
+		        		 <a class="text-dpgreen" href={`/tags/${slugify(tag)}`}>#{tag} </a>
+	            	))
+	            }
+			</div>
+            <div class="flex items-center gap-2 mb-12 md:mb-0">Share: <a href="/rss.xml"><img src="/images/Rss.png" /></a> <a href="https://twitter.com/Digipom"><img src="/images/Twitter.png" /></a></div>
+		</div>
+	</section>
+
+    <section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
+		<a href="/news" class="font-extrabold text-thirtyfour text-dpdarkblue tracking-tight">Latest articles</a>
+		<div class="md:flex md:justify-between mt-4 md:mt-8">
+			{
+				latestPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
+                    <div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
+						<a href={`/news/${post.slug}`} class="font-bold text-twentytwo leading-8 text-dpdarkblue mb-2">
+							{post.data.title}
+						</a>
+						<p class="text-dpdarkblue text-base text-opacity-60 mb-4 line-clamp-3">
+							{post.data.description}
+						</p>
+						<a href={`/news/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
+							Read more
+							<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</a>
+					</div>					
+                ))
+			}
+		</div>
+	</section>
+</Layout>
+
+<style is:global>
+	.blog-post p {
+		padding-bottom: 18px;
+	}
+	.blog-post p:last-child {
+		padding-bottom: 0;
+	}
+	.blog-post a:link, 
+	.blog-post a:active, 
+	.blog-post a:visited, 
+	.blog-post a:focus {
+		color: #408712;
+	}
+	.blog-post h1, 
+	.blog-post h2, 
+	.blog-post h3, 
+	.blog-post h4, 
+	.blog-post h5 {
+		color: #0E0E2C;
+		font-weight: 700 !important;
+	}
+	.blog-post h1 {
+		font-size: 48px !important;
+		margin-bottom: 48px;
+	}
+	.blog-post h2 {
+		font-size: 40px !important;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.blog-post h3 {
+		font-size: 1.3rem !important;
+	}
+	.blog-post h4 {
+		font-size: 1.2rem !important;
+	}
+	.blog-post h5 {
+		font-size: 1.1rem !important;
+	}
+
+	.blog-post ul {
+	    list-style-type: circle;
+	    padding-bottom: 12px;
+	    padding-left: 24px;
+	}
+
+	.blog-post ol {
+		list-style-type: number;
+		padding-bottom: 12px;
+		padding-left: 20px;
+	}
+
+	.blog-post .astro-code {
+		padding: 12px;
+		border-radius: 4px;
+		margin-bottom: 12px;
+	}
+	.blog-post blockquote {
+		border-left: 3px solid #999;
+		color: #222;
+		padding-left: 20px;
+		margin-left: 24px;
+		margin-bottom: 12px;
+		font-style: italic;
+	}	
+</style>

@@ -1,55 +1,62 @@
-# Astro Starter Kit: Basics
+# Digipom Website
 
-```
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
+The Digipom website redesign is implemented using [Astro](https://astro.build) and [Tailwind](https://tailwindcss.com).
 
 ## Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+The project structure looks like this:
 
 ```
 /
-├── public/
-│   └── favicon.svg
 ├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── content/
+│   │   ├── news/
+│   │   │   └── welcome-to-digipom.md
+│   │   └── config.ts
+│   ├── pages/
+│   │   ├── index.astro
+│   │   └── about.astro
+│   ├── styles/   
+│   │   └── digipom.css
+│   └── utils/
+│       └── slugify.js
+├── astro.config.mjs 
+├── tailwind.config.cjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Adding new posts
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Astro looks for `.md` files in the `src/content/news` directory; any new `.md` files will appear as new posts on the site.
 
-Any static assets, like images, can be placed in the `public/` directory.
+The markdown frontmatter schema is defined in `src/content/config.ts`. An example new post with valid frontmatter might look like this:
 
-## 🧞 Commands
+```
+---
+title: 'This is a new post!'
+description: 'This is a short description of the new post.'
+publishedDate: 2023-06-18
+tags: ["Blog", "Updates"]
+---
 
-All commands are run from the root of the project, from a terminal:
+# This is an H1 heading
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## H2 heading
 
-## 👀 Want to learn more?
+Here we'll say in bold, this is a **new post**!
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Content between opening and closing --- are the "frontmatter".
+
+Dates should be entered as YYYY-MM-DD, they will be displayed in a friendly format automatically.
+
+When a new post is pushed to the repo, the CI/CD pipeline will be triggered and automatically rebuild the site with the new post and upload it to the server. Thus the workflow to add new posts to the site should resemble this:
+
+- Use editor to add, edit and save the new post in src/content/news/newpost.md and then either use the editor's built in git functionality or return to the terminal to push the changes
+- git add src/content/news/newpost.md
+- git commit -m "add new post"
+- git push
+
+## Tags
+
+Tags should be entered like an array, as shown above, and while spaces and apostrophes can technically be used in the tag names, the generated URLs for tags will automatically be slugified.
