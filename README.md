@@ -28,7 +28,9 @@ The project structure looks like this:
 
 ## Adding new posts
 
-Astro looks for `.md` files in the `src/content/news` directory; any new `.md` files will appear as new posts on the site. The markdown frontmatter schema is defined in `src/content/config.ts`. An example new post with valid frontmatter might look like this:
+Astro looks for `.md` files in the `src/content/news` directory; any new `.md` files will appear as new posts on the site.
+
+The markdown frontmatter schema is defined in `src/content/config.ts`. An example new post with valid frontmatter might look like this:
 
 ```
 ---
