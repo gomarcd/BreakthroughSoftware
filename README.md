@@ -60,4 +60,4 @@ When a new post is pushed to the repo, the CI/CD pipeline will be triggered and 
 
 ## Tags
 
-Tags should be entered like an array, as shown above, and while spaces and apostraphes can be used in tag names, the generated URLs for tags will automatically be slugified.
+Tags should be entered like an array, as shown above, and while spaces and apostrophes can technically be used in the tag names, the generated URLs for tags will automatically be slugified.
