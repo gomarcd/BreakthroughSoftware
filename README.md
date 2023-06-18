@@ -45,7 +45,7 @@ tags: ["Blog", "Updates"]
 Here we'll say in bold, this is a **new post**!
 ```
 
-Content between opening and closing --- are the "frontmatter", following the schema defined in `src/content/config.ts`.
+Content between opening and closing --- are the "frontmatter".
 
 Dates should be entered as YYYY-MM-DD, they will be displayed in a friendly format automatically.
 
