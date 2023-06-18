@@ -1,6 +1,6 @@
 # Digipom Website
 
-The Digipom website redesign is implemented using [Astro][https://astro.build] and [Tailwind](https://tailwindcss.com).
+The Digipom website redesign is implemented using [Astro](https://astro.build) and [Tailwind](https://tailwindcss.com).
 
 
 ## Project Structure
