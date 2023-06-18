@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
+import { slugify } from '../../utils/slugify';
 const posts = await getCollection('news');
 
 export async function getStaticPaths() {
@@ -9,26 +10,26 @@ export async function getStaticPaths() {
   return newsEntries.flatMap((entry) => {
     const { tags } = entry.data;
     return tags.map((tag) => ({
-      params: { tag },
-      props: { entry, tags },
+      params: { tag: slugify(tag) },
+      props: { entry, tags, originalTag: tag },
     }));
   });
 }
 
-const { entry } = Astro.props;
+const { entry, originalTag } = Astro.props;
 const { tag } = entry.data.tags;
 
-const currentTag = Astro.params.tag;
+const postsWithTag = posts.filter((post) => post.data.tags.includes(originalTag));
 
-const postsWithTag = posts.filter((post) => post.data.tags.includes(currentTag));
+console.log(originalTag);
 ---
 
-<Layout title={`${currentTag} - Digipom`}>
-  Posts with tag <b>{currentTag}</b>: <br><br>
+<Layout title={`${originalTag} - Digipom`}>
+  Posts with tag <b>{originalTag}</b>: <br><br>
   {postsWithTag.map((post) => (
-      <a href={`/news/${post.slug}`}>{post.data.title}</a>
-      <p>{post.data.publishedDate}</p>
-      <p>{post.data.description}</p>
-      <br>
+    <a href={`/news/${post.slug}`}>{post.data.title}</a>
+    <p>{post.data.publishedDate}</p>
+    <p>{post.data.description}</p>
+    <br>
   ))}
 </Layout>

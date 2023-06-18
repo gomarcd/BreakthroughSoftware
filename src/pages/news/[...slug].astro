@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
+import { slugify } from '../../utils/slugify';
 import '../../styles/digipom.css';
 import { format } from 'date-fns';
 import sanitizeHtml from 'sanitize-html';
@@ -33,7 +34,7 @@ const { Content } = await entry.render();
             <div class="mb-12">Tags: 
             	{
             		entry.data.tags.map(tag => (
-		        		<a class="text-dpgreen" href={`/tags/${tag}`}>#{tag} </a>
+		        		 <a class="text-dpgreen" href={`/tags/${slugify(tag)}`}>#{tag} </a>
 	            	))
 	            }
 			</div>
