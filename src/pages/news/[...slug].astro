@@ -4,11 +4,8 @@ import Layout from '../../layouts/Layout.astro';
 import { slugify } from '../../utils/slugify';
 import '../../styles/digipom.css';
 import { format } from 'date-fns';
-import sanitizeHtml from 'sanitize-html';
-import MarkdownIt from 'markdown-it';
 
 const latestPosts = await getCollection("news");
-const parser = new MarkdownIt();
 
 export async function getStaticPaths() {
     const newsEntries = await getCollection('news');
@@ -106,8 +103,30 @@ const { Content } = await entry.render();
 	.blog-post h5 {
 		font-size: 1.1rem !important;
 	}
+
+	.blog-post ul {
+	    list-style-type: circle;
+	    padding-bottom: 12px;
+	    padding-left: 24px;
+	}
+
+	.blog-post ol {
+		list-style-type: number;
+		padding-bottom: 12px;
+		padding-left: 20px;
+	}
+
 	.blog-post .astro-code {
 		padding: 12px;
 		border-radius: 4px;
+		margin-bottom: 12px;
 	}
+	.blog-post blockquote {
+		border-left: 3px solid #999;
+		color: #222;
+		padding-left: 20px;
+		margin-left: 24px;
+		margin-bottom: 12px;
+		font-style: italic;
+	}	
 </style>
