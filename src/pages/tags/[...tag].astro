@@ -2,9 +2,10 @@
 import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
 import { slugify } from '../../utils/slugify';
-const posts = await getCollection('news');
 import '../../styles/digipom.css';
 import { format } from 'date-fns';
+
+const posts = await getCollection('news');
 
 export async function getStaticPaths() {
   const newsEntries = await getCollection('news');
@@ -23,7 +24,6 @@ const { tag } = entry.data.tags;
 
 const postsWithTag = posts.filter((post) => post.data.tags.includes(originalTag));
 
-console.log(originalTag);
 ---
 
 <Layout title={`${originalTag} - Digipom`}>
