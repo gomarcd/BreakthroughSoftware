@@ -21,7 +21,7 @@ const { Content } = await entry.render();
 
 ---
 
-<Layout title="News - Digipom">
+<Layout title={entry.data.title}>
 	<section class="blog-post px-4 py-3 lg:px-0 mb-14 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-start">
 		<div class="w-full md:w-[730px] float-right">
             <h1 class="mb-8 font-bold text-forty md:text-5xl tracking-tight leading-normal md:leading-normal">{entry.data.title}</h1>
