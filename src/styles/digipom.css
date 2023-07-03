@@ -78,3 +78,13 @@ a, .transition {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+.apple-badge {
+    width: 148px;
+    height: auto;
+}
+
+.play-badge {
+    max-width: 165px;
+    height: auto;
+}
