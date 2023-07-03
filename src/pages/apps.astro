@@ -32,16 +32,16 @@ import '../styles/digipom.css';
 				</a>
 				<div class="flex items-center justify-center gap-2">
 					<a href="https://apps.apple.com/us/app/easy-voice-recorder/id1222784166">
-						<img src="/images/apple-badge.png" alt="Download Easy Voice Recorder on Apple App Store" />
+						<img class="apple-badge" src="/images/appstore-lrg.svg" alt="Easy Voice Recorder on Apple App Store Badge" />
 					</a>
 					<a href="https://play.google.com/store/apps/details?id=com.coffeebeanventures.easyvoicerecorder&hl=en_CA&gl=US">
-						<img src="/images/google-play-badge.png" alt="Download Easy Voice Recorder on Google Play" />
+						<img class="play-badge" src="/images/en_badge_web_generic.png" alt="Easy Voice Recorder on Google Play Badge" />
 					</a>
 				</div>
 			</div>
 		</div>
 		<div class="hidden md:inline-block md:pl-2">
-			<img class="md:w-float-right" src="/images/phone-image1-homepage.png" alt="Easy Voice Recorder" />
+			<img class="mainevr-image md:w-float-right" src="/images/phone-image1-homepage.png" alt="Easy Voice Recorder" />
 		</div>
 	</section>
 
@@ -61,13 +61,25 @@ import '../styles/digipom.css';
 				</a>
 				<div class="flex items-center justify-center gap-2">
 					<a href="https://play.google.com/store/apps/details?id=com.digipom.nightfilter">
-						<img src="/images/google-play-badge.png" alt="Download Night Filter on Google Play" />
+						<img class="play-badge" src="/images/en_badge_web_generic.png" alt="Easy Voice Recorder on Google Play Badge" />
 					</a>
 				</div>
 			</div>
 		</div>
 		<div class="hidden md:inline-block md:pl-2">
-			<img class="px-2 py-3 md:m-0 float-right" src="/images/phone-image2-homepage.png" alt="Night Filter" />
+			<img class="mainnightfilter-image px-2 py-3 md:m-0 float-right" src="/images/phone-image2-homepage.png" alt="Night Filter" />
 		</div>
 	</section>
 </Layout>
+
+<style is:global>
+	.mainevr-image {
+	    max-width: 466px;
+	    height: auto;
+	}
+
+	.mainnightfilter-image {
+	    max-width: 481px;
+	    height: auto;
+	}
+</style>
