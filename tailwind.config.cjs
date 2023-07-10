@@ -9,8 +9,8 @@ module.exports = {
 				sans: ["Poppins", ...defaultTheme.fontFamily.sans],
 			},
 			fontSize: {
-				thirtytwo: ["32px", "48px"],
 				twentytwo: ["22px", "38px"],
+				thirtytwo: ["32px", "48px"],
 				thirtyfour: ["34px", "51px"],
 				forty: ["40px", "69px"],
 			},
@@ -18,6 +18,10 @@ module.exports = {
 				dpgreen: "#408712",
 				dpdarkgreen: "#3a7415",
 				dpdarkblue: "#0E0E2C",
+				dpgray: "#888",
+				darkmodebackground: "#262A31",
+				darkmodetext: "#FFFFFF",
+				darkmodedpgreen: '#2EBD59',
 				dpneutral: {
 					100: "#E8E8E8",
 					200: "#E5E5E5",
@@ -28,7 +32,26 @@ module.exports = {
 					700: "#909090",
 				},
 			},
+			typography: {
+				DEFAULT: {
+					css: {				
+						code: {
+							'border-radius': '.25rem',
+							'padding': '.1rem 0.2rem',
+						},			
+						// remove backticks from code blocks
+						"code::before": {
+						  content: "none",
+						},
+						"code::after": {
+						  content: "none",
+						},					
+					},
+				},			
+			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+	],
 };
