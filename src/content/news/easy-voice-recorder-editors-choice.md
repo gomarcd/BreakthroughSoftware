@@ -2,7 +2,7 @@
 title: 'Easy Voice Recorder is Editors’ Choice over at Google Play'
 description: 'I’m very happy to announce that Easy Voice Recorder has been featured with the prestigious Editors’ Choice badge on Google Play!'
 publishedDate: 2017-12-04
-image: '/images/editorschoice-1-267x300.png' 
+image: '/images/editorschoice-1.png' 
 tags: ["Editors' Choice", "Google Play"]
 ---
 
@@ -16,6 +16,6 @@ While I have always developed the app as an independent developer, I have defini
 
 Easy Voice Recorder can be downloaded directly from Google Play by clicking on the badge below:
 
-[![Get it on Google Play](/images/en_generic_rgb_wo_60.png)](https://play.google.com/store/apps/details?id=com.coffeebeanventures.easyvoicerecorder)
+[![Get it on Google Play](/images/download.png)](https://play.google.com/store/apps/details?id=com.coffeebeanventures.easyvoicerecorder)
 
 Any questions or comments? Please don’t hesitate to let me know! I can be reached directly via Help – Contact Us inside the app, and I’m always happy to hear from you.
