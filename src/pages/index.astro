@@ -94,19 +94,19 @@ import '../styles/digipom.css';
 	</section>
 
 	<section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
-		<a href="/news" class="font-semibold text-dpgreen dark:text-darkmodedpgreen">News</a>
+		<a href="/blog" class="font-semibold text-dpgreen dark:text-darkmodedpgreen">Blog</a>
 		<div class="md:flex md:justify-between mt-4">
 			<!-- Show latest 4 posts -->
 			{
 				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
 					<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
-						<a href={`/news/${post.slug}`} class="font-bold text-twentytwo leading-8 text-dpdarkblue dark:text-darkmodetext mb-2">
+						<a href={`/blog/${post.slug}`} class="font-bold text-twentytwo leading-8 text-dpdarkblue dark:text-darkmodetext mb-2">
 							{post.data.title}
 						</a>
 						<p class="text-dpdarkblue dark:text-darkmodetext text-base text-opacity-60 mb-4 line-clamp-3">
 							{post.data.description}
 						</p>
-						<a href={`/news/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white dark:text-darkmodedpgreen dark:border-darkmodedpgreen dark:hover:bg-darkmodedpgreen mb-4">
+						<a href={`/blog/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white dark:text-darkmodedpgreen dark:border-darkmodedpgreen dark:hover:bg-darkmodedpgreen mb-4">
 							Read more
 							<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
