@@ -15,7 +15,7 @@ import { format } from 'date-fns';
 	<section class="px-4 py-3 lg:px-0 mb-12 lg:max-w-[1110px] lg:mx-auto md:flex md:items-start md:justify-between gap-10">
 		{
 		 	newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,1).map((post) => (
-					<a href={`/news/${post.slug}`} class="md:w-1/2">
+					<a href={`/blog/${post.slug}`} class="md:w-1/2">
 						{
 							post.data.image ? (
 								// post has an image
@@ -40,7 +40,7 @@ import { format } from 'date-fns';
             <div>
 				{
 				 	newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(1,2).map((post) => (
-				 		<a href={`/news/${post.slug}`} class="mb-6 flex items-start gap-6">
+				 		<a href={`/blog/${post.slug}`} class="mb-6 flex items-start gap-6">
 							{
 								post.data.image ? (
 									// post has an image
@@ -59,7 +59,7 @@ import { format } from 'date-fns';
 			 	}
 				{
 				 	newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(2,3).map((post) => (
-		                <a href={`/news/${post.slug}`} class="flex items-start gap-6">
+		                <a href={`/blog/${post.slug}`} class="flex items-start gap-6">
 							{
 								post.data.image ? (
 									// post has an image
@@ -87,7 +87,7 @@ import { format } from 'date-fns';
 		{
 			newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).map((post) => (
 				<div class="flex items-center mb-10">
-					<a href={`/news/${post.slug}`} class="w-[180px]">
+					<a href={`/blog/${post.slug}`} class="w-[180px]">
 						{
 							post.data.image ? (
 								// post has an image
@@ -99,7 +99,7 @@ import { format } from 'date-fns';
 						}
 					</a>
 					<div class="w-full pl-4">
-						<a href={`/news/${post.slug}`}><div class="leading-none dark:text-darkmodetext">{post.data.title}</div></a>
+						<a href={`/blog/${post.slug}`}><div class="leading-none dark:text-darkmodetext">{post.data.title}</div></a>
 						<div class="text-dpdarkblue text-base text-opacity-60 mb-2 dark:text-darkmodetext">{format(new Date(post.data.publishedDate), 'MMMM d, yyyy')}</div>
 						<div class="text-dpdarkblue text-base text-opacity-60 line-clamp-2 dark:text-darkmodetext">{post.data.description}</div>
 					</div>
