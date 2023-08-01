@@ -33,7 +33,7 @@ const postsWithTag = posts.filter((post) => post.data.tags.includes(originalTag)
       {
         postsWithTag.map((post) => (
           <div class="flex items-center mb-10">
-            <a href={`/news/${post.slug}`} class="w-[180px]">
+            <a href={`/blog/${post.slug}`} class="w-[180px]">
               {
                 post.data.image ? (
                   // post has an image
@@ -45,7 +45,7 @@ const postsWithTag = posts.filter((post) => post.data.tags.includes(originalTag)
               }
             </a>
             <div class="w-full pl-4 dark:text-darkmodetext">
-              <a href={`/news/${post.slug}`}><div class="leading-none">{post.data.title}</div></a>
+              <a href={`/blog/${post.slug}`}><div class="leading-none">{post.data.title}</div></a>
               <div class="text-dpdarkblue dark:text-darkmodetext text-base text-opacity-60 mb-2">{format(new Date(post.data.publishedDate), 'MMMM d, yyyy')}</div>
               <div class="text-dpdarkblue dark:text-darkmodetext text-base text-opacity-60 line-clamp-2">{post.data.description}</div>
             </div>
