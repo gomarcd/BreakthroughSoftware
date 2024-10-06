@@ -1,0 +1,37 @@
+---
+import Footer from './Footer.astro';
+import Header from './Header.astro';
+import '../styles/digipom.css';
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#E8E8E8">
+		<title>{frontmatter.title}</title>
+	</head>
+	<body class="h-screen bg-white dark:bg-darkmodebackground text-dpdarkblue">
+
+		<!-- Header / Havbar -->
+		<Header />
+
+		<!-- Main page content -->
+		<article class="prose dark:prose-invert px-4 mb-8 lg:px-0 lg:max-w-[1110px] lg:mx-auto">
+			<slot />
+		</article>
+		
+		<!-- Footer -->
+		<Footer />
+		<script is:inline src="/navMenu.js"></script>
+		<script is:inline src="/faq.js"></script>
+	</body>
+</html>
