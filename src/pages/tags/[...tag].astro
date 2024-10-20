@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
 import { slugify } from '../../utils/slugify';
-import '../../styles/digipom.css';
 import { format } from 'date-fns';
 
 const posts = await getCollection('news');

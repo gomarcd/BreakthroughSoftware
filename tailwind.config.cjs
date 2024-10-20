@@ -21,6 +21,7 @@ module.exports = {
 				dpgray: "#888",
 				darkmodebackground: "#262A31",
 				darkmodetext: "#FFFFFF",
+				darkmodeprimary: '#3B71FE',
 				darkmodedpgreen: '#2EBD59',
 				dpneutral: {
 					100: "#E8E8E8",

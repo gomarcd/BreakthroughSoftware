@@ -1,146 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from "astro:content";
-const newsPosts = await getCollection("news");
 ---
 
-<Layout title="Digipom">
+<Layout title="Breakthrough Software">
 	<section class="px-4 py-3 lg:px-0 mb-12 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-between">
-
 		<div class="md:w-[593px]">
-			<div class="font-bold md:text-twentytwo text-dpgreen dark:text-darkmodedpgreen mb-3">Hello,</div>
 			<div class="font-bold text-5xl tracking-tight dark:text-darkmodetext leading-normal mb-4">
-				We create fun, intuitive, and easy to use apps for mobile devices
+				We create handcrafted apps that send you to the moon.
 			</div>
 			<div class="text-dpdarkblue dark:text-darkmodetext text-opacity-60 md:text-twentytwo mb-6 lg:mr-24">
-				Digipom is a mobile development studio creating great apps for Android and iOS.
+				Independent dev shop with & for real people.
 			</div>
-			<div class="md:flex md:items-center md:gap-12">
-				<a href="/contact" class="transition flex items-center justify-center gap-3 border-2 rounded border-dpgreen dark:border-darkmodedpgreen hover:border-dpdarkgreen bg-dpgreen dark:bg-darkmodedpgreen dark:hover:bg-dpgreen dark:hover:border-dpgreen hover:bg-dpdarkgreen w-full md:w-36 py-4 font-semibold text-sm text-white hover:text-white mb-4 md:mb-0">
-					Let's talk
-					<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M19 13.6785C19 14.2089 18.7893 14.7176 18.4142 15.0927C18.0391 15.4678 17.5304 15.6785 17 15.6785H5L1 19.6785V3.67847C1 3.14803 1.21071 2.63933 1.58579 2.26425C1.96086 1.88918 2.46957 1.67847 3 1.67847H17C17.5304 1.67847 18.0391 1.88918 18.4142 2.26425C18.7893 2.63933 19 3.14803 19 3.67847V13.6785Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</a>
-				<div class="flex items-center gap-4">
-					<a href="/apps" class="font-medium text-lg md:text-twentytwo dark:text-darkmodetext hover:text-dpgreen dark:hover:text-darkmodedpgreen">Check our apps</a>
-					<svg class="stroke-dpgreen dark:stroke-darkmodedpgreen" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M8 1.17847L15 8.17847L8 15.1785M1 8.17847H15H1Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</div>
-			</div>
-		</div>
-
-		<div class="hidden md:inline-block md:pl-2">
-			<img class="md:w-[451px] md:w-float-right dark:hidden" src="/images/banner-image-new.png" alt="Woman using phone by lake" />
-			<img class="md:w-[451px] md:w-float-right hidden dark:block" src="/images/banner_dark_mode.png" alt="Woman using phone by lake" />
-		</div>	
-	</section>
-
-	<section class="px-4 py-3 lg:px-0 mb-12 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-between">
-		<div class="md:w-[530px]">
-			<a href="/easy-voice-recorder" class="font-bold text-twentytwo lg:text-thirtyfour dark:text-darkmodetext mb-4">Easy Voice Recorder</a>
-			<div class="text-dpdarkblue text-lg md:text-twentytwo text-opacity-60 dark:text-darkmodetext mb-4">
-				Your everyday companion to record important moments. Capture meetings, personal notes, classes, songs, and much more!
-			</div>
-			<img class="block md:hidden px-2 py-4 mx-auto" src="/images/phone-image1-homepage.png" alt="Easy Voice Recorder" />
-			<div class="md:flex md:items-center md:gap-6">
-				<a href="/easy-voice-recorder" class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen dark:text-darkmodedpgreen dark:border-darkmodedpgreen dark:hover:bg-darkmodedpgreen w-full md:w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4 md:mb-0">
-					Learn more
-					<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</a>
-				<div class="flex items-center justify-center gap-2">
-					<a href="https://apps.apple.com/us/app/easy-voice-recorder/id1222784166">
-						<img class="apple-badge" src="/images/appstore-lrg.svg" alt="Easy Voice Recorder on Apple App Store Badge" />
-					</a>
-					<a href="https://play.google.com/store/apps/details?id=com.coffeebeanventures.easyvoicerecorder&hl=en_CA&gl=US">
-						<img class="play-badge" src="/images/en_badge_web_generic.png" alt="Easy Voice Recorder on Google Play Badge" />
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="hidden md:inline-block md:pl-2">
-			<img class="mainevr-image md:w-float-right" src="/images/phone-image1-homepage.png" alt="Easy Voice Recorder" />
 		</div>
 	</section>
 
-	<section class="px-4 py-3 lg:px-0 mb-12 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-between">
-		<div class="md:w-[530px]">
-			<a href="/night-filter" class="font-bold text-twentytwo lg:text-thirtyfour dark:text-darkmodetext mb-4">Night Filter</a>
-			<div class="text-dpdarkblue text-lg md:text-twentytwo dark:text-darkmodetext text-opacity-60 mb-4">
-				Night Filter makes it easy for you to dim your screen, adjust your color tint, and more! Use it to read at night with less eye strain and correct for an excessive screen tint.
-			</div>
-			<img class="block md:hidden px-2 py-3 mx-auto" src="/images/NightFilter.png" alt="Night Filter" />
-			<div class="md:flex md:items-center md:gap-6">
-				<a href="/night-filter" class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen dark:text-darkmodedpgreen dark:border-darkmodedpgreen dark:hover:bg-darkmodedpgreen w-full md:w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4 md:mb-0">
-					Learn more
-					<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</a>
-				<div class="flex items-center justify-center gap-2">
-					<a href="https://play.google.com/store/apps/details?id=com.digipom.nightfilter">
-						<img class="play-badge" src="/images/en_badge_web_generic.png" alt="Night Filter on Google Play Badge" />
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="hidden md:inline-block md:pl-2">
-			<img class="mainnightfilter-image px-2 py-3 md:m-0 float-right" src="/images/NightFilter.png" alt="Night Filter" />
-		</div>
-	</section>
-
-	<section class="px-4 py-3 lg:px-0 mb-8 md:text-twentytwo lg:max-w-[1110px] lg:mx-auto">
-		<a href="/blog" class="font-semibold text-dpgreen dark:text-darkmodedpgreen">Blog</a>
-		<div class="md:flex md:justify-between mt-4">
-			<!-- Show latest 4 posts -->
-			{
-				newsPosts.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf()).slice(0,4).map((post) => (
-					<div class="md:max-w-[240px] grid grid-flow-row auto-rows-max content-between mb-10">
-						<a href={`/blog/${post.slug}`} class="font-bold text-twentytwo leading-8 text-dpdarkblue dark:text-darkmodetext mb-2">
-							{post.data.title}
-						</a>
-						<p class="text-dpdarkblue dark:text-darkmodetext text-base text-opacity-60 mb-4 line-clamp-3">
-							{post.data.description}
-						</p>
-						<a href={`/blog/${post.slug}`} class="transition flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white dark:text-darkmodedpgreen dark:border-darkmodedpgreen dark:hover:bg-darkmodedpgreen mb-4">
-							Read more
-							<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-						</a>
-					</div>					
-				))
-			}
-			<!-- END Looped news items -->
-		</div>
-	</section>
-
-	<section class="px-4 py-3 lg:px-0 mb-8 lg:max-w-[1110px] lg:mx-auto">
-		<div class="md:w-[540px]">
-			<a href="/about" class="font-semibold md:text-twentytwo text-dpgreen dark:text-darkmodedpgreen">About Digipom</a>
-			<a href="/about"><div class="font-bold text-twentytwo md:text-thirtyfour tracking-tight text-dpdarkblue dark:text-darkmodetext mb-4 mt-4">We believe that a pleasant user experience is first and foremost.</div></a>
-			<div class="text-dpdarkblue text-lg md:text-twentytwo dark:text-darkmodetext text-opacity-60 mb-4">Welcome to Digipom. We're an independent development studio that was started in March 2012, and we've been creating fun, intuitive, and easy-to-use apps for mobile ever since.</div>
-			<a href="/about" class="hidden transition md:flex items-center justify-center gap-3 border-2 border-dpgreen rounded hover:bg-dpgreen dark:text-darkmodedpgreen dark:border-darkmodedpgreen dark:hover:bg-darkmodedpgreen w-full md:w-40 py-4 font-semibold text-sm text-dpgreen hover:text-white mb-4">
-				Learn more
-				<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-			</a>
-		</div>
-	</section>
 </Layout>
-
-<style is:global>
-	.mainevr-image {
-	    max-width: 466px;
-	    height: auto;
-	}
-
-	.mainnightfilter-image {
-	    max-width: 481px;
-	    height: auto;
-	}
-</style>
