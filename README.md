@@ -1,5 +1,5 @@
 # Breakthrough Software
 
-Breakthrough Software partners with [GuidedUX](https://www.guidedux.com/) to provide UI/UX and software/web development services and consultancy.
+Breakthrough Software is a digital agency providing development & consulting services.
 
-This repository houses its own website.
+This repository houses its website, a simple landing page made with Astro and deployed to Cloudflare Pages.
