@@ -17,8 +17,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="192x192" href="/images/web-app-manifest-192.png">
-		<link rel="icon" type="image/svg+xml" href="/images/favicon-light.svg" media="(prefers-color-scheme: light)">
-		<link rel="icon" type="image/svg+xml" href="/images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+		<link rel="icon" type="image/svg+xml" href="/images/favicon-light.svg" id="favicon">
 		<link rel="manifest" href="/site.webmanifest">
 		<script defer data-domain="breakthrough.software" src="https://plausible.io/js/script.js"></script>		
 		<title>{title}</title>
@@ -43,9 +42,9 @@ const { title } = Astro.props;
 			
 			function updateFavicon() {
 			  if (darkModeMediaQuery.matches) {
-				favicon.href = '/images/favicon-dark.svg';
+				favicon.setAttribute('href', '/images/favicon-dark.svg');
 			  } else {
-				favicon.href = '/images/favicon-light.svg';
+				favicon.setAttribute('href', '/images/favicon-light.svg');
 			  }
 			}
 			
