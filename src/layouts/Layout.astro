@@ -17,8 +17,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="192x192" href="/images/web-app-manifest-192.png">
-		<link rel="icon" type="image/svg+xml" href="/images/favicon-light.svg" id="favicon">
-		<link rel="manifest" href="/site.webmanifest">
+		<link rel="icon" type="image/svg+xml" href="/images/favicon-dark.svg" id="favicon">
 		<script defer data-domain="breakthrough.software" src="https://plausible.io/js/script.js"></script>		
 		<title>{title}</title>
 	</head>
@@ -36,22 +35,19 @@ const { title } = Astro.props;
 		<Footer />
 		<script is:inline src="/navMenu.js"></script>
 		<script>
-			// Switch favicon based on color scheme
 			const favicon = document.getElementById('favicon');
 			const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-			
+
 			function updateFavicon() {
-			  if (darkModeMediaQuery.matches) {
-				favicon.setAttribute('href', '/images/favicon-dark.svg');
-			  } else {
-				favicon.setAttribute('href', '/images/favicon-light.svg');
-			  }
+			document.getElementById('favicon').setAttribute('href', 
+				darkModeMediaQuery.matches ? '/images/favicon-dark.svg' : '/images/favicon-light.svg'
+			);
 			}
-			
+
 			// Set initial favicon
 			updateFavicon();
-			
-			// Update favicon when color scheme changes
+
+			// Update favicon when scheme changes
 			darkModeMediaQuery.addEventListener('change', updateFavicon);
 		  </script>
 
