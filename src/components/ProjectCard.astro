@@ -1,0 +1,41 @@
+---
+// ProjectCard.astro
+// A reusable component for displaying project portfolio items
+
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+    title: string;
+    description: string;
+    image: string;
+    tags: string[];
+    link?: string;
+}
+
+const { title, description, image, tags, link = "#" } = Astro.props;
+---
+
+<div class="project-card overflow-hidden bg-white dark:bg-darkmodebackground rounded-lg shadow-md transition hover:shadow-lg">
+    <div class="project-image h-48 overflow-hidden">
+        <img src={image} alt={title} class="w-full h-full object-cover transition hover:scale-105">
+    </div>
+    <div class="project-content p-6">
+        <h3 class="text-xl font-bold mb-2 text-dpdarkblue dark:text-white">{title}</h3>
+        <p class="text-dpdarkblue/70 dark:text-white/80 mb-4">{description}</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+            {tags.map(tag => (
+                <span class="inline-block bg-gray-100 dark:bg-darkmodebackground/50 text-dpdarkblue/80 dark:text-white/80 text-sm py-1 px-3 rounded-full">
+                    {tag}
+                </span>
+            ))}
+        </div>
+        
+        <a href={link} class="inline-flex items-center text-darkmodeprimary hover:text-darkmodeprimary/80 font-medium transition">
+            View details
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </a>
+    </div>
+</div>

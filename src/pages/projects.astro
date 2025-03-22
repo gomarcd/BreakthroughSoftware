@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout title="Our Work | Breakthrough Software">
+	<section class="hero py-16 md:py-20">
+		<div class="container mx-auto px-4">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl md:text-5xl font-bold mb-6 text-dpdarkblue dark:text-white">
+					Our <span class="text-darkmodeprimary">Projects</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-dpdarkblue/70 dark:text-white/80 mb-8">
+					Take a look at some of the work we've delivered for our clients.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="filters py-8">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-wrap justify-center gap-4 mb-12">
+				<button class="filter-btn active">All</button>
+				<button class="filter-btn">Web Apps</button>
+				<button class="filter-btn">Mobile</button>
+				<button class="filter-btn">E-commerce</button>
+				<button class="filter-btn">UI/UX Design</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects py-8 mb-16">
+		<div class="container mx-auto px-4">			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<ProjectCard 
+					title="Project One" 
+					description="A brief description of the project, highlighting the key challenges and solutions. This would be replaced with actual project details."
+					image="/images/project-placeholder-1.jpg"
+					tags={['Web App', 'React', 'Node.js']}
+					link="/projects/project-one"
+				/>
+				<ProjectCard 
+					title="Project Two" 
+					description="A brief description of the project, highlighting the key challenges and solutions. This would be replaced with actual project details."
+					image="/images/project-placeholder-2.jpg"
+					tags={['Mobile', 'React Native', 'Firebase']}
+					link="/projects/project-two"
+				/>
+				<ProjectCard 
+					title="Project Three" 
+					description="A brief description of the project, highlighting the key challenges and solutions. This would be replaced with actual project details."
+					image="/images/project-placeholder-3.jpg"
+					tags={['E-commerce', 'Vue', 'Stripe']}
+					link="/projects/project-three"
+				/>
+				<ProjectCard 
+					title="Project Four" 
+					description="A brief description of the project, highlighting the key challenges and solutions. This would be replaced with actual project details."
+					image="/images/project-placeholder-4.jpg"
+					tags={['Web App', 'Angular', 'Express']}
+					link="/projects/project-four"
+				/>
+				<ProjectCard 
+					title="Project Five" 
+					description="A brief description of the project, highlighting the key challenges and solutions. This would be replaced with actual project details."
+					image="/images/project-placeholder-5.jpg"
+					tags={['UI/UX Design', 'Figma', 'Design System']}
+					link="/projects/project-five"
+				/>
+				<ProjectCard 
+					title="Project Six" 
+					description="A brief description of the project, highlighting the key challenges and solutions. This would be replaced with actual project details."
+					image="/images/project-placeholder-6.jpg"
+					tags={['Mobile', 'Swift', 'iOS']}
+					link="/projects/project-six"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta py-16">
+		<div class="container mx-auto px-4">
+			<div class="bg-darkmodeprimary rounded-lg p-8 md:p-12 text-center text-white">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to build your next project?</h2>
+				<p class="text-xl mb-8 max-w-3xl mx-auto">
+					Let's discuss how we can help bring your vision to life with custom software solutions.
+				</p>
+				<a href="/about" class="btn-white inline-flex items-center justify-center">
+					Get in touch
+					<Icon name="lucide:arrow-right" class="w-5 h-5 ml-2" />
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.filter-btn {
+		@apply py-2 px-4 rounded-full border-2 border-gray-300 dark:border-gray-700 text-dpdarkblue/80 dark:text-white/80 font-medium transition;
+	}
+	
+	.filter-btn:hover {
+		@apply border-darkmodeprimary text-darkmodeprimary;
+	}
+	
+	.filter-btn.active {
+		@apply bg-darkmodeprimary border-darkmodeprimary text-white;
+	}
+	
+	.btn-white {
+		@apply bg-white text-darkmodeprimary font-semibold py-3 px-6 rounded-md hover:bg-white/90 transition;
+	}
+</style>

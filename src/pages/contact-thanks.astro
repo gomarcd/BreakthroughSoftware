@@ -1,16 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
-<Layout title="Message Sent | Breakthrough">
-
-        <section class="px-4 py-3 lg:px-0 md:mb-4 lg:max-w-[1110px] lg:mx-auto md:flex md:items-center md:justify-center">
-            <div class="flex flex-col sm:items-center">
-            	<div class="font-bold md:text-twentytwo text-darkmodeprimary mb-3 dark:text-darkmodeprimary">Connect Now</div>
-                <div class="font-bold text-forty md:text-center md:mb-4 dark:text-darkmodetext">
-                    Thank you for reaching out to Breakthrough Software!
+<Layout title="Message Sent | Breakthrough Software">
+    <section class="py-20 md:py-28 animate-fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-2xl mx-auto">
+                <div class="mb-8 text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300">
+                        <Icon name="lucide:check-circle" class="w-12 h-12" />
+                    </div>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-bold mb-6 text-dpdarkblue dark:text-white">
+                    Thank you for reaching out!
+                </h1>
+                
+                <p class="text-xl text-dpdarkblue/70 dark:text-white/80 mb-10">
+                    Your message has been received. We'll review it and get back to you as soon as possible, 
+                    typically within 1-2 business days.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/" class="btn-primary flex items-center justify-center">
+                        Return to Home
+                        <Icon name="lucide:home" class="w-5 h-5 ml-2" />
+                    </a>
+                    
+                    <a href="/projects" class="btn-secondary flex items-center justify-center">
+                        Browse Our Work
+                        <Icon name="lucide:arrow-right" class="w-5 h-5 ml-2" />
+                    </a>
                 </div>
             </div>
-        </section>
-
+        </div>
+    </section>
+    
+    <section class="py-16 bg-gray-50 dark:bg-darkmodebackground/40 animate-slide-up">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-dpdarkblue dark:text-white">
+                    What happens next?
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3 class="text-xl font-bold mb-2 text-dpdarkblue dark:text-white">Review</h3>
+                        <p class="text-dpdarkblue/70 dark:text-white/80">
+                            We'll review your inquiry and understand your needs
+                        </p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3 class="text-xl font-bold mb-2 text-dpdarkblue dark:text-white">Contact</h3>
+                        <p class="text-dpdarkblue/70 dark:text-white/80">
+                            Our team will reach out to discuss your project in detail
+                        </p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3 class="text-xl font-bold mb-2 text-dpdarkblue dark:text-white">Solution</h3>
+                        <p class="text-dpdarkblue/70 dark:text-white/80">
+                            We'll create a tailored proposal for your specific needs
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>
+
+<style>
+    .step-number {
+        @apply w-12 h-12 flex items-center justify-center rounded-full bg-darkmodeprimary text-white text-xl font-bold mx-auto mb-4;
+    }
+    
+    .btn-primary {
+        @apply bg-darkmodeprimary text-white font-semibold py-3 px-6 rounded-md hover:bg-darkmodeprimary/90 transition;
+    }
+    
+    .btn-secondary {
+        @apply bg-white dark:bg-darkmodebackground text-darkmodeprimary border-2 border-darkmodeprimary font-semibold py-3 px-6 rounded-md hover:bg-darkmodeprimary/10 transition;
+    }
+</style>

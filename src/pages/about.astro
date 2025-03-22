@@ -1,66 +1,185 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TeamMember from '../components/TeamMember.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
-<Layout title="About Breakthrough">
-	<section class="px-4 py-3 lg:px-0 mb-14 lg:max-w-[1110px] lg:mx-auto md:flex items-center justify-center">
-		<div class="flex flex-col w-[398px] sm:w-full md:items-center md:w-[732px]">
-			<div class="font-bold md:text-twentytwo text-darkmodeprimary dark:text-darkmodeprimary mb-3">What now?</div>
-			<div class="font-bold text-forty tracking-tight leading-normal mb-4 dark:text-darkmodetext">
-				Welcome to Breakthrough Software
+<Layout title="About Breakthrough Software">
+	<section class="hero py-16 md:py-20">
+		<div class="container mx-auto px-4">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl md:text-5xl font-bold mb-6 text-dpdarkblue dark:text-white">
+					About <span class="text-darkmodeprimary">Breakthrough Software</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-dpdarkblue/70 dark:text-white/80 mb-8">
+					We are an independent development studio providing custom tailored digital solutions to businesses of all sizes.
+				</p>
 			</div>
-			<p class="text-dpdarkblue text-opacity-60 text-lg md:text-twentytwo md:text-center dark:text-darkmodetext">
-				We are an independent dev shop launched in 2023, providing custom tailored digital solutions to small & medium business, freelancers & solo entrepreneurs of all kinds.  
-			</p>
-		</div>
-	</section>
-	
-	<section class="px-4 py-3 lg:px-0 mb-10 lg:max-w-[1110px] lg:mx-auto md:flex">
-		<div class="flex flex-col">
-			<div class="font-bold md:text-twentytwo text-darkmodeprimary dark:text-darkmodeprimary mb-3">Why?</div>
-			<div class="md:max-w-[1062px] font-bold text-twentytwo md:text-thirtyfour tracking-tight leading-normal dark:text-darkmodetext mb-4">
-				Building is hard, finding good help is harder.
-			</div>
-			<p class="text-dpdarkblue text-opacity-60 dark:text-darkmodetext md:text-twentytwo">
-				Sometimes you just can't do it all alone - skip the Upwork/Fiverr race to the bottom, we've got you covered!
-			</p>
 		</div>
 	</section>
 
-	<section class="px-4 py-3 lg:px-0 mb-10 lg:max-w-[1110px] lg:mx-auto md:flex">
-		<div class="flex flex-col">
-			<div class="font-bold md:text-twentytwo text-darkmodeprimary mb-3 dark:text-darkmodeprimary">Connect Now</div>
-			<div class="md:max-w-[1062px] font-bold text-twentytwo md:text-thirtyfour tracking-tight leading-normal dark:text-darkmodetext mb-4">
-				Support with humans
+	<section class="our-story py-16 bg-gray-50 dark:bg-darkmodebackground/40">
+	    <div class="container mx-auto px-4">
+	        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dpdarkblue dark:text-white text-center">Our Story</h2>
+	        <div class="max-w-3xl mx-auto text-center">
+	            <p class="text-lg text-dpdarkblue/70 dark:text-white/80 mb-4">
+	                Founded in 2023, Breakthrough Software was born from a passion for creating impactful digital solutions that drive real business results.
+	            </p>
+	            <p class="text-lg text-dpdarkblue/70 dark:text-white/80 mb-4">
+	                We saw that many businesses were struggling to find reliable development partners who truly understood their needs and could deliver high-quality work consistently.
+	            </p>
+	            <p class="text-lg text-dpdarkblue/70 dark:text-white/80">
+	                Our team brings together decades of combined experience across various industries and technologies, allowing us to tackle complex challenges and deliver solutions that exceed expectations.
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+	<section class="values py-16">
+		<div class="container mx-auto px-4">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4 text-dpdarkblue dark:text-white">Our Values</h2>
+				<p class="text-xl text-dpdarkblue/70 dark:text-white/80 max-w-3xl mx-auto">
+					These core principles guide everything we do at Breakthrough Software.
+				</p>
 			</div>
-			<p class="text-dpdarkblue text-opacity-60 dark:text-darkmodetext md:text-twentytwo">
-				No frustrating bots here, please feel free to reach us with the form below for any inquiry:
-			</p>			
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="value-card p-8 bg-white dark:bg-darkmodebackground rounded-lg shadow-md">
+					<div class="value-icon mb-4 text-darkmodeprimary">
+						<Icon name="lucide:award" class="w-12 h-12" />
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-dpdarkblue dark:text-white">Quality First</h3>
+					<p class="text-dpdarkblue/70 dark:text-white/80">
+						We never compromise on quality. Every line of code, every design element, and every interaction is crafted with care and attention to detail.
+					</p>
+				</div>
+				
+				<div class="value-card p-8 bg-white dark:bg-darkmodebackground rounded-lg shadow-md">
+					<div class="value-icon mb-4 text-darkmodeprimary">
+						<Icon name="lucide:eye" class="w-12 h-12" />
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-dpdarkblue dark:text-white">Transparency</h3>
+					<p class="text-dpdarkblue/70 dark:text-white/80">
+						We believe in open and honest communication throughout the entire development process, keeping you informed every step of the way.
+					</p>
+				</div>
+				
+				<div class="value-card p-8 bg-white dark:bg-darkmodebackground rounded-lg shadow-md">
+					<div class="value-icon mb-4 text-darkmodeprimary">
+						<Icon name="lucide:lightbulb" class="w-12 h-12" />
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-dpdarkblue dark:text-white">Innovation</h3>
+					<p class="text-dpdarkblue/70 dark:text-white/80">
+						We continuously explore new technologies and approaches to solve problems more effectively and create better user experiences.
+					</p>
+				</div>
+				
+				<div class="value-card p-8 bg-white dark:bg-darkmodebackground rounded-lg shadow-md">
+					<div class="value-icon mb-4 text-darkmodeprimary">
+						<Icon name="lucide:users" class="w-12 h-12" />
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-dpdarkblue dark:text-white">Collaboration</h3>
+					<p class="text-dpdarkblue/70 dark:text-white/80">
+						We work closely with our clients, treating them as partners and ensuring their vision and goals are at the center of everything we do.
+					</p>
+				</div>
+				
+				<div class="value-card p-8 bg-white dark:bg-darkmodebackground rounded-lg shadow-md">
+					<div class="value-icon mb-4 text-darkmodeprimary">
+						<Icon name="lucide:target" class="w-12 h-12" />
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-dpdarkblue dark:text-white">Results-Driven</h3>
+					<p class="text-dpdarkblue/70 dark:text-white/80">
+						We focus on delivering solutions that drive tangible business outcomes, not just meeting technical requirements.
+					</p>
+				</div>
+				
+				<div class="value-card p-8 bg-white dark:bg-darkmodebackground rounded-lg shadow-md">
+					<div class="value-icon mb-4 text-darkmodeprimary">
+						<Icon name="lucide:trending-up" class="w-12 h-12" />
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-dpdarkblue dark:text-white">Continuous Growth</h3>
+					<p class="text-dpdarkblue/70 dark:text-white/80">
+						We're committed to learning and improving, staying at the forefront of technology to provide the best possible solutions.
+					</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<div class="flex flex-col">
-		<section class="px-4 py-3 lg:px-0 mb-8 md:mb-44 lg:max-w-[1110px] lg:mx-auto md:flex md:items-start md:justify-center md:gap-20">
-			<div class="md:w-1/2 flex flex-col">
-				<form action="https://formsubmit.co/support@breakthrough.software" method="POST">
-					<input type="hidden" name="_next" value="https://breakthrough.software/contact-thanks">
-					<label class="mb-3 font-semibold text-dpdarkblue text-sm dark:text-darkmodetext" for="full_name">Full Name</label>
-					<input class="mb-5 w-full md:max-w-[537px] py-2 px-4 border rounded border-dpneutral-600 text-dpdarkblue" id="full_name" type="text" name="full_name" placeholder="John Smith" />
-					<label class="mb-3 font-semibold text-dpdarkblue text-sm dark:text-darkmodetext" for="email">Email</label>
-					<input class="mb-5 w-full md:max-w-[537px] py-2 px-4 border rounded border-dpneutral-600 text-dpdarkblue" id="email" type="email" name="email" placeholder="john.smith@email.com" required />
-					<label class="mb-3 font-semibold text-dpdarkblue text-sm dark:text-darkmodetext" for="phone_number">Phone number</label>
-					<input class="mb-5 w-full md:max-w-[537px] py-2 px-4 border rounded border-dpneutral-600 text-dpdarkblue" id="phone_number" name="phone_number" placeholder="(555) 555-5555" />
-					<label class="mb-3 font-semibold text-dpdarkblue text-sm dark:text-darkmodetext" for="message">Message</label>
-					<textarea class="mb-6 md:mb-10 w-full md:max-w-[537px] py-2 px-4 border rounded border-dpneutral-600 text-dpdarkblue" rows="6" id="message" name="message" placeholder="Hey, John here. I had an idea for a killer app, but I'm not quite sure how to put it all together..." required />
-					<button class="transition flex items-center justify-center gap-3 border-2 rounded border-darkmodeprimary hover:border-darkmodeprimary bg-darkmodeprimary hover:bg-darkmodeprimary w-full md:w-36 py-4 font-semibold text-sm text-white hover:text-white mb-4 md:mb-0 dark:border-darkmodeprimary dark:bg-darkmodeprimary dark:hover:bg-darkmodeprimary dark:hover:border-darkmodeprimary" type="submit">
-						Send
-						<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M1 13.7552L7 7.75525L1 1.75525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</button>
-				</form>
-			</div>
-		</section>
-	</div>
-	
+	<section class="contact py-16">
+	    <div class="container mx-auto px-4">
+	        <div class="text-center max-w-3xl mx-auto mb-12">
+	            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dpdarkblue dark:text-white">Get in Touch</h2>
+	            <p class="text-lg text-dpdarkblue/70 dark:text-white/80">
+	                Ready to discuss your project? Have questions about our services? I'd love to hear from you!
+	            </p>
+	        </div>
+	        
+	        <div class="max-w-xl mx-auto">
+	            <form action="https://formsubmit.co/support@breakthrough.software" method="POST" class="bg-white dark:bg-darkmodebackground p-8 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800">
+	                <input type="hidden" name="_next" value="https://breakthrough.software/contact-thanks">
+	                
+	                <div class="mb-6">
+	                    <label for="full_name" class="block text-sm font-semibold mb-2 text-dpdarkblue dark:text-white">Full Name</label>
+	                    <input 
+	                        type="text" 
+	                        id="full_name" 
+	                        name="full_name" 
+	                        placeholder="John Smith" 
+	                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-darkmodeprimary dark:bg-darkmodebackground/80 text-dpdarkblue dark:text-white"
+	                        required
+	                    >
+	                </div>
+	                
+	                <div class="mb-6">
+	                    <label for="email" class="block text-sm font-semibold mb-2 text-dpdarkblue dark:text-white">Email Address</label>
+	                    <input 
+	                        type="email" 
+	                        id="email" 
+	                        name="email" 
+	                        placeholder="john.smith@email.com" 
+	                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-darkmodeprimary dark:bg-darkmodebackground/80 text-dpdarkblue dark:text-white"
+	                        required
+	                    >
+	                </div>
+	                
+	                <div class="mb-6">
+	                    <label for="phone_number" class="block text-sm font-semibold mb-2 text-dpdarkblue dark:text-white">Phone Number</label>
+	                    <input 
+	                        type="tel" 
+	                        id="phone_number" 
+	                        name="phone_number" 
+	                        placeholder="(555) 555-5555" 
+	                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-darkmodeprimary dark:bg-darkmodebackground/80 text-dpdarkblue dark:text-white"
+	                    >
+	                </div>
+	                
+	                <div class="mb-6">
+	                    <label for="message" class="block text-sm font-semibold mb-2 text-dpdarkblue dark:text-white">Message</label>
+	                    <textarea 
+	                        id="message" 
+	                        name="message" 
+	                        rows="6" 
+	                        placeholder="Tell us about your project or inquiry..." 
+	                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-darkmodeprimary dark:bg-darkmodebackground/80 text-dpdarkblue dark:text-white"
+	                        required
+	                    ></textarea>
+	                </div>
+	                
+	                <button type="submit" class="btn-primary w-full">
+	                    Send Message
+	                </button>
+	            </form>
+	        </div>
+	    </div>
+	</section>
+	</section>
 </Layout>
+
+<style>
+	.btn-primary {
+		@apply bg-darkmodeprimary text-white font-semibold py-3 px-6 rounded-md hover:bg-darkmodeprimary/90 transition;
+	}
+</style>

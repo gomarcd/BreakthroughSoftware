@@ -1,53 +1,106 @@
 ---
-import Footer from './Footer.astro';
 import Header from './Header.astro';
+import Footer from './Footer.astro';
 import '../styles/app.css';
 
 export interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { 
+	title,
+	description = "Breakthrough Software is an independent dev shop providing custom tailored digital solutions to businesses of all sizes."
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="192x192" href="/images/web-app-manifest-192.png">
-		<link rel="icon" href="/images/favicon-dark.svg" id="favicon">
-		<script defer data-domain="breakthrough.software" src="https://plausible.io/js/script.js"></script>		
+		<link rel="icon" type="image/svg+xml" href="/images/favicon-dark.svg" id="favicon" />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://breakthrough.software/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://breakthrough.software/images/og-image.jpg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://breakthrough.software/" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://breakthrough.software/images/og-image.jpg" />
+
+		<!-- Google Fonts (Poppins) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+		
+		<!-- Analytics -->
+		<script defer data-domain="breakthrough.software" src="https://plausible.io/js/script.js"></script>
 	</head>
-	<body class="h-screen bg-white dark:bg-darkmodebackground text-dpdarkblue">
-
-		<!-- Header / Havbar -->
+	<body class="bg-white dark:bg-darkmodebackground text-dpdarkblue dark:text-white min-h-screen flex flex-col">
 		<Header />
-
-		<!-- Main page content -->
-		<div class="px-4 py-3 mb-12 lg:max-w-[1110px] lg:mx-auto">
+		
+		<main class="flex-grow">
 			<slot />
-		</div>
-
-		<!-- Footer -->
+		</main>
+		
 		<Footer />
-		<script is:inline src="/navMenu.js"></script>
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-			const favicon = document.getElementById('favicon');
-			const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
-			
-			function setFavicon() {
-				const iconPath = darkMode.matches ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
-				document.getElementById('favicon').setAttribute('href', iconPath);
-			}
-			
-			setFavicon();
-			darkMode.addEventListener('change', setFavicon);
-			});
-		  </script>
 
+		<script is:inline>
+			// Handle dark mode toggle and remember user preference
+			document.addEventListener('DOMContentLoaded', () => {
+				// Check for saved theme preference or use the system preference
+				const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+				
+				// Apply the theme
+				if (theme === 'dark') {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+				
+				// Update favicon based on theme
+				updateFavicon(theme === 'dark');
+				
+				// Listen for system preference changes
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+					if (!localStorage.getItem('theme')) {
+						updateTheme(e.matches);
+					}
+				});
+				
+				// Function to update favicon
+				function updateFavicon(isDark) {
+					const faviconEl = document.getElementById('favicon');
+					const iconPath = isDark ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
+					faviconEl.setAttribute('href', iconPath);
+				}
+				
+				// Function to update theme
+				function updateTheme(isDark) {
+					if (isDark) {
+						document.documentElement.classList.add('dark');
+					} else {
+						document.documentElement.classList.remove('dark');
+					}
+					updateFavicon(isDark);
+				}
+				
+				// Expose theme toggle function for the theme switch button
+				window.toggleTheme = function() {
+					const isDark = document.documentElement.classList.contains('dark');
+					localStorage.setItem('theme', isDark ? 'light' : 'dark');
+					updateTheme(!isDark);
+				}
+			});
+		</script>
 	</body>
 </html>

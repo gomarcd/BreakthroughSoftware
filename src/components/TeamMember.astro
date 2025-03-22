@@ -1,0 +1,53 @@
+---
+// TeamMember.astro
+// A reusable component for displaying team members
+
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+    name: string;
+    role: string;
+    bio: string;
+    image: string;
+    social?: {
+        twitter?: string;
+        linkedin?: string;
+        github?: string;
+    };
+}
+
+const { name, role, bio, image, social = {} } = Astro.props;
+---
+
+<div class="team-member-card bg-white dark:bg-darkmodebackground rounded-lg shadow-md overflow-hidden">
+    <div class="team-member-image h-64 overflow-hidden">
+        <img src={image} alt={name} class="w-full h-full object-cover">
+    </div>
+    <div class="team-member-content p-6">
+        <h3 class="text-xl font-bold mb-1 text-dpdarkblue dark:text-white">{name}</h3>
+        <p class="text-darkmodeprimary font-medium mb-3">{role}</p>
+        <p class="text-dpdarkblue/70 dark:text-white/80 mb-4">{bio}</p>
+        
+        {(social.twitter || social.linkedin || social.github) && (
+            <div class="social-links flex space-x-3">
+                {social.twitter && (
+                    <a href={social.twitter} target="_blank" rel="noopener noreferrer" class="text-dpdarkblue/60 dark:text-white/60 hover:text-darkmodeprimary dark:hover:text-darkmodeprimary transition">
+                        <Icon name="lucide:twitter" class="h-5 w-5" />
+                    </a>
+                )}
+                
+                {social.linkedin && (
+                    <a href={social.linkedin} target="_blank" rel="noopener noreferrer" class="text-dpdarkblue/60 dark:text-white/60 hover:text-darkmodeprimary dark:hover:text-darkmodeprimary transition">
+                        <Icon name="lucide:linkedin" class="h-5 w-5" />
+                    </a>
+                )}
+                
+                {social.github && (
+                    <a href={social.github} target="_blank" rel="noopener noreferrer" class="text-dpdarkblue/60 dark:text-white/60 hover:text-darkmodeprimary dark:hover:text-darkmodeprimary transition">
+                        <Icon name="lucide:github" class="h-5 w-5" />
+                    </a>
+                )}
+            </div>
+        )}
+    </div>
+</div>
