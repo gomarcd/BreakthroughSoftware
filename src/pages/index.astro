@@ -21,7 +21,7 @@ import { Icon } from 'astro-icon/components';
 							Learn more
 							<Icon name="lucide:arrow-right" class="w-5 h-5 ml-2" />
 						</a>
-						<a href="#projects" class="btn-secondary flex items-center justify-center">
+						<a href="#what-we-do" class="btn-secondary flex items-center justify-center">
 							See our work
 							<Icon name="lucide:arrow-down" class="w-5 h-5 ml-2" />
 						</a>
@@ -34,7 +34,7 @@ import { Icon } from 'astro-icon/components';
 		</div>
 	</section>
 
-	<section class="services py-16 bg-gray-50 dark:bg-darkmodebackground/40">
+	<section class="services py-16 bg-gray-50 dark:bg-darkmodebackground/40" id="what-we-do">
 		<div class="container mx-auto px-4">
 			<div class="text-center mb-16">
 				<h2 class="text-3xl md:text-4xl font-bold mb-4 text-dpdarkblue dark:text-white">What We Do</h2>
@@ -79,89 +79,7 @@ import { Icon } from 'astro-icon/components';
 		</div>
 	</section>
 
-	<section id="projects" class="projects py-16">
-		<div class="container mx-auto px-4">
-			<div class="text-center mb-16">
-				<h2 class="text-3xl md:text-4xl font-bold mb-4 text-dpdarkblue dark:text-white">Our Work</h2>
-				<p class="text-xl text-dpdarkblue/70 dark:text-white/80 max-w-3xl mx-auto">
-					Take a look at some of the projects we've delivered for our clients.
-				</p>
-			</div>
-			
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<ProjectCard 
-					title="Project One" 
-					description="A brief description of the project, highlighting the key challenges and solutions."
-					image="/images/project-placeholder-1.jpg"
-					tags={['Web', 'React', 'Node.js']}
-				/>
-				<ProjectCard 
-					title="Project Two" 
-					description="A brief description of the project, highlighting the key challenges and solutions."
-					image="/images/project-placeholder-2.jpg"
-					tags={['Mobile', 'React Native', 'Firebase']}
-				/>
-				<ProjectCard 
-					title="Project Three" 
-					description="A brief description of the project, highlighting the key challenges and solutions."
-					image="/images/project-placeholder-3.jpg"
-					tags={['E-commerce', 'Vue', 'Stripe']}
-				/>
-			</div>
-			
-			<div class="text-center mt-12">
-				<a href="/projects" class="btn-secondary inline-flex items-center justify-center">
-					View all projects
-					<Icon name="lucide:arrow-right" class="w-5 h-5 ml-2" />
-				</a>
-			</div>
-		</div>
-	</section>
 
-	<section class="testimonials py-16 bg-gray-50 dark:bg-darkmodebackground/40">
-		<div class="container mx-auto px-4">
-			<div class="text-center mb-16">
-				<h2 class="text-3xl md:text-4xl font-bold mb-4 text-dpdarkblue dark:text-white">What Clients Say</h2>
-				<p class="text-xl text-dpdarkblue/70 dark:text-white/80 max-w-3xl mx-auto">
-					Don't just take our word for it - here's what our clients have to say about working with us.
-				</p>
-			</div>
-			
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				<div class="testimonial-card p-8 bg-white dark:bg-darkmodebackground rounded-lg shadow-md">
-					<div class="mb-4">
-						<Icon name="lucide:quote" class="w-10 h-10 text-darkmodeprimary" />
-					</div>
-					<p class="text-lg mb-6 text-dpdarkblue/80 dark:text-white/80">
-						"Breakthrough Software delivered our project on time and exceeded our expectations. Their team was professional, responsive, and truly understood our business needs."
-					</p>
-					<div class="flex items-center">
-						<div class="testimonial-avatar w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
-						<div>
-							<h4 class="font-bold text-dpdarkblue dark:text-white">Jane Smith</h4>
-							<p class="text-sm text-dpdarkblue/70 dark:text-white/70">CEO, Company Name</p>
-						</div>
-					</div>
-				</div>
-				
-				<div class="testimonial-card p-8 bg-white dark:bg-darkmodebackground rounded-lg shadow-md">
-					<div class="mb-4">
-						<Icon name="lucide:quote" class="w-10 h-10 text-darkmodeprimary" />
-					</div>
-					<p class="text-lg mb-6 text-dpdarkblue/80 dark:text-white/80">
-						"Working with Breakthrough Software was a game-changer for our business. They helped us implement a solution that increased our efficiency by 40%."
-					</p>
-					<div class="flex items-center">
-						<div class="testimonial-avatar w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
-						<div>
-							<h4 class="font-bold text-dpdarkblue dark:text-white">John Doe</h4>
-							<p class="text-sm text-dpdarkblue/70 dark:text-white/70">CTO, Another Company</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<section class="cta py-16">
 		<div class="container mx-auto px-4">
