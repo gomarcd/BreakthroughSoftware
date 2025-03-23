@@ -1,7 +1,7 @@
 ---
 import Header from './Header.astro';
 import Footer from './Footer.astro';
-import '../styles/app.css';
+import '../styles/global.css';
 
 export interface Props {
 	title: string;
@@ -19,7 +19,7 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/images/favicon-dark.svg" id="favicon" />
+		<!-- No favicon here - will be added by script -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
 
@@ -44,6 +44,23 @@ const {
 		
 		<!-- Analytics -->
 		<script defer data-domain="breakthrough.software" src="https://plausible.io/js/script.js"></script>
+		
+		<!-- Immediate favicon insertion -->
+		<script is:inline>
+			// Create and insert favicon link element dynamically
+			(function() {
+				const isDark = localStorage.getItem('theme') === 'dark' || 
+				            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+				
+				const faviconLink = document.createElement('link');
+				faviconLink.rel = 'icon';
+				faviconLink.type = 'image/svg+xml';
+				faviconLink.href = isDark ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
+				faviconLink.id = 'favicon';
+				
+				document.head.appendChild(faviconLink);
+			})();
+		</script>
 	</head>
 	<body class="bg-white dark:bg-darkmodebackground text-dpdarkblue dark:text-white min-h-screen flex flex-col">
 		<Header />
@@ -55,36 +72,25 @@ const {
 		<Footer />
 
 		<script is:inline>
-			// Handle dark mode toggle and remember user preference
 			document.addEventListener('DOMContentLoaded', () => {
-				// Check for saved theme preference or use the system preference
-				const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-				
-				// Apply the theme
-				if (theme === 'dark') {
-					document.documentElement.classList.add('dark');
-				} else {
-					document.documentElement.classList.remove('dark');
-				}
-				
-				// Update favicon based on theme
-				updateFavicon(theme === 'dark');
-				
-				// Listen for system preference changes
-				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-					if (!localStorage.getItem('theme')) {
-						updateTheme(e.matches);
-					}
-				});
-				
-				// Function to update favicon
 				function updateFavicon(isDark) {
-					const faviconEl = document.getElementById('favicon');
+					let faviconEl = document.getElementById('favicon');
 					const iconPath = isDark ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
-					faviconEl.setAttribute('href', iconPath);
+					
+					// If favicon element exists, update it
+					if (faviconEl) {
+						faviconEl.setAttribute('href', iconPath);
+					} else {
+						// Create it if it doesn't exist
+						faviconEl = document.createElement('link');
+						faviconEl.rel = 'icon';
+						faviconEl.type = 'image/svg+xml';
+						faviconEl.href = iconPath;
+						faviconEl.id = 'favicon';
+						document.head.appendChild(faviconEl);
+					}
 				}
 				
-				// Function to update theme
 				function updateTheme(isDark) {
 					if (isDark) {
 						document.documentElement.classList.add('dark');
@@ -94,7 +100,20 @@ const {
 					updateFavicon(isDark);
 				}
 				
-				// Expose theme toggle function for the theme switch button
+				// Check for saved theme preference or use the system preference
+				const theme = localStorage.getItem('theme') || 
+				            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+				
+				// Apply the theme
+				updateTheme(theme === 'dark');
+				
+				// Listen for system preference changes
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+					if (!localStorage.getItem('theme')) {
+						updateTheme(e.matches);
+					}
+				});
+				
 				window.toggleTheme = function() {
 					const isDark = document.documentElement.classList.contains('dark');
 					localStorage.setItem('theme', isDark ? 'light' : 'dark');
