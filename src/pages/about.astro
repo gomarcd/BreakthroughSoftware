@@ -116,10 +116,9 @@ import { Icon } from 'astro-icon/components';
 	            </p>
 	        </div>
 	        
-	        <div class="max-w-xl mx-auto>
+	        <div class="max-w-xl mx-auto">
 	            <form action="https://api.staticforms.xyz/submit" method="POST" class="bg-white dark:bg-darkmodebackground p-8 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800">
 	                <input type="hidden" name="apiKey value="sf_bilcm90h19h8n8nefbb51cl3">
-					<input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
 	                <input type="hidden" name="redirectTo" value="https://breakthrough.software/contact-thanks">
 	                
 	                <div class="mb-6">
@@ -169,7 +168,8 @@ import { Icon } from 'astro-icon/components';
 	                    ></textarea>
 	                </div>
 
-					<div class="g-recaptcha" data-sitekey="6LcDiP4qAAAAAG1EYrsESz4JryNn8f6WBdccDios"></div>                
+					<div class="g-recaptcha" data-sitekey="6LcDiP4qAAAAAIbaiwZAWHau65XCPs7hpBKLyw-f"></div>  
+					<script src="https://www.google.com/recaptcha/api.js" async defer></script>              
 	                <button type="submit" class="btn-primary w-full">
 	                    Send Message
 	                </button>
@@ -184,4 +184,3 @@ import { Icon } from 'astro-icon/components';
 		@apply bg-darkmodeprimary text-white font-semibold py-3 px-6 rounded-md hover:bg-darkmodeprimary/90 transition;
 	}
 </style>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
