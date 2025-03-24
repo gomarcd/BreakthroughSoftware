@@ -119,6 +119,7 @@ import { Icon } from 'astro-icon/components';
 	        
 	        <div class="max-w-xl mx-auto">
 	            <form action="https://api.staticforms.xyz/submit" method="POST" class="bg-white dark:bg-darkmodebackground p-8 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800">
+	            	<div class g-recaptcha" data-sitekey="6LcDiP4qAAAAAG1EYrsESz4JryNn8f6WBdccDios"></div>
 	                <input type="hidden" name="accessKey" value="0c5bf9ce-afbc-423b-96cf-a5dfbf43866b">
 	                <input type="hidden" name="redirectTo" value="https://breakthrough.software/contact-thanks">
 	                
@@ -183,3 +184,4 @@ import { Icon } from 'astro-icon/components';
 		@apply bg-darkmodeprimary text-white font-semibold py-3 px-6 rounded-md hover:bg-darkmodeprimary/90 transition;
 	}
 </style>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
