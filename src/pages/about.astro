@@ -117,10 +117,15 @@ import { Icon } from 'astro-icon/components';
 	        </div>
 	        
 	        <div class="max-w-xl mx-auto">
-	            <form action="https://api.staticforms.xyz/submit" method="POST" class="bg-white dark:bg-darkmodebackground p-8 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800">
-	                <input type="hidden" name="apiKey" value="sf_bilcm90h19h8n8nefbb51cl3">
-	                <input type="hidden" name="redirectTo" value="https://breakthrough.software/contact-thanks">
-	                <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+	            <form action="https://formsubmit.co/aqvxc7a9@sendly.cc" method="POST" class="bg-white dark:bg-darkmodebackground p-8 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800">
+	                <!-- Anti-spam honeypot -->
+	                <input type="text" name="_honey" style="display:none">
+	                
+	                <!-- Custom subject line -->
+	                <input type="hidden" name="_subject" value="New Contact Form Submission | Breakthrough Software">
+	                
+	                <!-- Redirect after submission -->
+	                <input type="hidden" name="_next" value="https://breakthrough.software/contact-thanks">
 
 	                <div class="mb-6">
 	                    <label for="name" class="block text-sm font-semibold mb-2 text-dpdarkblue dark:text-white">Full Name</label>
@@ -168,9 +173,7 @@ import { Icon } from 'astro-icon/components';
 	                        required
 	                    ></textarea>
 	                </div>
-
-					<div class="g-recaptcha" data-sitekey="6LcBk_4qAAAAAKmv9ypuS_7IMlSeGmPQaNNCwVhD"></div>  
-					<script src="https://www.google.com/recaptcha/api.js" async defer></script>              
+	                
 	                <button type="submit" class="btn-primary w-full">
 	                    Send Message
 	                </button>
